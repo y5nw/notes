@@ -1,0 +1,88 @@
+% -*- TeX-master: "../main" -*-
+
+\chapter{Grundlagen}
+\setcounter{section}{-1}
+
+\section{Beispiele von logischen Schlussfolgerungen}
+
+Natürliche Zahlen: \( \mathbb{N} = \left\{ 1, 2, \dots \right\} \)
+
+$n$ ist gerade, wenn $k \in \mathbb{N}$ existiert mit $n = 2k$.
+
+$n$ ist ungerade, wenn $k \in \mathbb{N}$ existiert mit $n = 2k-1$.
+
+\begin{theorem}
+  Sei $n \in \mathbb{N}$. $n$ ist genau dann gerade, wenn $n^2$ gerade ist.
+\end{theorem}
+
+\begin{proof}
+  a. $n$ gerade $\Rightarrow$ $n^2$ gerade
+  \begin{align*}
+    n &= 2k \\
+    n^2 &= (2k)^2 \\
+    \, &= 2\underbrace{(2k^2)}_{\in \mathbb{N}} \\
+    \, &\in \mathbb{N}
+  \end{align*}
+
+  b. $n^2$ gerade $\Rightarrow$ $n$ gerade: schwer zu beweisen
+
+  c. $n$ ungerade $\Rightarrow$ $n^2$ ungerade
+  \begin{align*}
+    n &= 2k-1 \\
+    n^2 &= (2k-1)^2 \\
+    \, &= 4k^2-4k+1 \\
+    \, &= 2\underbrace{(2k^2-2k+1}_{\in \mathbb{N}})-1 \\
+    \, &\in \mathbb{N}
+  \end{align*}
+
+  Was hat c mit b zu tun?
+
+  $p$: „$n$ ist gerade“; $q$: „$n^2$ ist gerade“.
+
+  b. $p \Rightarrow q$; c. $\neg p \Rightarrow \neg q$ $\leftarrow$ Kontraposition zu b
+
+  D.h. b ist genau dann wahr, wenn c wahr ist.
+
+  c ist wahr $\Rightarrow$ b ist auch wahr.
+\end{proof}
+
+\begin{example}[Beweis durch Widerspruch]
+  $\sqrt{2}$ ist irrational.
+
+  \begin{proof}
+    Annahme: $\sqrt{2}$ ist rational.
+
+    Es sei \( A = \left\{ n \in \mathbb{N} \middle| \exists m \in \mathbb{Z}: \sqrt{2} = \frac{m}{n} \right\} \)
+
+    $\sqrt{2}$ ist rational, wenn $A$ nicht leer ist. $A \subseteq \mathbb{N}$.
+
+    Es sei $n_{*}: \forall n \in A: n \ge n_{*}$. Dann ist $\sqrt{2} = \frac{m}{n_{*}}$.
+
+    \begin{align*}
+      m-n_{*} &= \sqrt{2}n_{*} = \underbrace{\left( \sqrt{2}-1 \right)}_{< 1}n_{*} \\
+      \, &< n_{*} \\
+      m-n_{*} &\in \mathbb{N} \\
+      \sqrt{2} &= \frac{m}{n_{*}} = \frac{m(m-n_{*})}{n(m-n_{*})} = \frac{m^2-mn_{*}}{n(m-n_{*})} \\
+      \, &= \frac{2n_{*}^2-mn_{*}}{n(m-n_{*})} = \frac{2n_{*}-m}{m-n_{*}} \\
+      \, &= \frac{\tilde{m}}{m-n_{*}}, \tilde{m} \in \mathbb{Z} \\
+    \end{align*}
+    Widerspruch: $m-n_{*} < n$
+  \end{proof}
+
+  Man kann damit auch zeigen, dass $\sqrt{3}$ irrational ist.
+
+  Was ist mit $\sqrt{k}, k \in \mathbb{N}$?
+\end{example}
+
+\begin{theorem}
+  Sei $k \in \mathbb{N}$. Dann ist entweder $\sqrt{k} \in \mathbb{N}$ oder $\sqrt{k}$ irrational.
+\end{theorem}
+\begin{proof}
+  Annahme: $k \in \mathbb{Q} \setminus \mathbb{N}$
+
+  Es sei \( A = \left\{ n \in \mathbb{N} \middle| \exists m \in \mathbb{Z}: \sqrt{k} = \frac{m}{n} \right\} \) (vgl. oben)
+
+  $A$ hat ein kleinstes Element $n_{*}$ (vgl. oben)
+
+  Womit soll man dies erweitern? ($m - l \cdot n_{*}$)
+\end{proof}
