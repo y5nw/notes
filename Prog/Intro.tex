@@ -1,0 +1,45 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Einführung}
+
+\section{Einfache Programme}
+
+\begin{example}[Algorithmus für Summation]
+  \( \sum_1^n = \frac{n(n+1)}{2} \)
+  \lstinputlisting[language=Java]{Prog/SimpleProgram/SimpleProgram.java}
+\end{example}
+
+\texttt{javac} Übersetzt Quellcode in Klassen. \texttt{java} führt das Programm aus. Dabei wird in der Klasse die Methode \texttt{main}\index{\texttt{main}} gestartet.
+
+Compiler\index{Compiler}: Sie transformieren die Programm in maschinennahe Programme (oder Bytecode), die später ausgeführt werden. Der Quellcode wird in das Zielprogramm übersetzt.
+
+Interpreter\index{Interpreter}: Sie übersetzen die Anweisungen und führen sie unmittelbar aus.
+
+Java ist (anders als z.B. C) vom Plattform unabhängig: Programme werden in (vom Plattform unabhängigen) Java-Bytecode übersetzt, der vom Interpreter ausgeführt.
+
+JIT (Just-In-Time) Compilation\index{JIT-Compilation}: Findet während der Ausführung des Codes statt; Optimierungen
+
+Wenn man den Quellcode ändern, muss man das Programm wieder compilieren.
+
+\section{Objekten und Klassen}
+
+Jedes Objekt der Realität hat ein virtuelles Gegenstück. Objekte kooperieren durch Datenaustausch (z.B. „$A$ ruft eine Methode von $B$ auf“). Objekten werden durch drei Aspekte charakterisiert:
+\begin{itemize}
+\item Identität: Objektnamen (oder: Speicheradresse)
+\item Zustand: Attribute
+\item Verhalten: Methoden
+\end{itemize}
+
+Was modelliert man bei einem Billiard-Spiel?
+\begin{itemize}
+\item Tisch: Größe
+\item Bälle: Farbe, Gewicht, Position
+\end{itemize}
+
+Klasse: „Bauplan“ von Objekten. Sie legen fest, welche Attribute und Methoden die Objekt-Instanzen der Klassen haben können.
+
+Operatoren werden mit dem \texttt{new}-Operator erzeugt.
+
+\begin{example}
+  Man implementiert eine \texttt{main}-Methode der Klasse \texttt{Vector2D}
+  \lstinputlisting[language=Java]{Prog/OOP\_Intro/Vector2D.java}
+\end{example}

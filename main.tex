@@ -3,15 +3,28 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{stix2}
 \usepackage[ngerman]{babel}
+\usepackage{xcolor}
 \usepackage{units}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
+\usepackage{listings}
 \usepackage{hyperref}
+\usepackage{imakeidx}
 \usepackage{cancel,ulem}
 \usepackage{menukeys}
 \usepackage{tabularx}
 \usepackage{tikz}
 \usetikzlibrary{datavisualization,datavisualization.formats.functions}
+
+\lstset{
+  basicstyle=\small\tt,
+  columns=flexible,
+  identifierstyle=\color{green!50!black},
+  keywordstyle=\color{blue},
+  numbers=left,
+  numberstyle=\tiny,
+  tabsize=4,
+}
 
 \title{Notizen}
 \author{}
@@ -22,10 +35,12 @@
 \def\phantomequal{\phantom{{}={}}}
 \def\bar#1{\overline{#1}}
 
+\makeindex[intoc]
 \begin{document}
 \newtheorem{theorem}{Satz}[section]
 \newtheorem{axiom}{Axiom}[section]
 \newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Korollar}[section]
 \theoremstyle{definition}
 \newtheorem{example}{Beispiel}[section]
 \newtheorem{definition}{Definition}[section]
@@ -35,7 +50,19 @@
 \maketitle
 \tableofcontents
 
+\part{Grundbegriffe der Informatik}
+
+\part{Programmieren}
+\include{Prog/Intro.tex}
+
+\part{Lineare Algebra I}
+\include{LA1/Sprache.tex}
+
 \part{Analysis I}
 \include{Ana1/Grundlagen.tex}
+
+\backmatter
+\part{Appendices}
+\printindex
 
 \end{document}

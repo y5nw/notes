@@ -1,6 +1,11 @@
 auto
 *.aux
+*.idx
+*.ild
+*.ind
 *.log
 *.out
 *.pdf
 *.toc
+
+*.class
