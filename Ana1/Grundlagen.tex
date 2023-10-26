@@ -84,5 +84,107 @@ $n$ ist ungerade, wenn $k \in \mathbb{N}$ existiert mit $n = 2k-1$.
 
   $A$ hat ein kleinstes Element $n_{*}$ (vgl. oben)
 
-  Womit soll man dies erweitern? ($m - l \cdot n_{*}$)
+  $k > 1 \implies \exists l \in \mathbb{N}: l < \sqrt{k} < l+1$
+
+  \begin{align*}
+    \sqrt{k} &= \frac{m}{n_{*}} \\
+    \smash{\underbrace{m - ln_{*}}_{\in \mathbb{Z}}} &= \sqrt{k} n_{*} - ln_{*} \\
+    \, &= \underbrace{(\sqrt{k} - l)}_{> 0} n_{*} > 0 \\
+    \implies m - ln_{*} &\in \mathbb{N} \\
+    m-ln_{*} &= \underbrace{(\sqrt{k} - l)}_{< 1} n < n \\
+    \sqrt{k} = \frac{m}{n} &= \frac{m(m-ln_{*})}{n_{*}(m-ln_{*})} \\
+    \, &= \frac{m^2 - lmn_*}{n_{*}(m-ln_{*})} \\
+    \, &= \frac{kn^2 - lmn_{*}}{n_{*}(m-ln_{*}} \\
+    \, &= \frac{\overbrace{kn - lm}^{\in \mathbb{Z}}}{m-ln_{*}} \\
+    \implies m-ln_{*} &\in \mathbb{A}
+  \end{align*}
+  Widerspruch: $m-ln_{*} < n_{*}$
 \end{proof}
+
+\section{Aussagenlogik}
+
+\begin{definition}
+  Eine Aussage\index{Aussage} ist eine Behauptung, welche sprachlich oder durch eine Formel formuliert ist. Diese kann entweder wahr oder falsch sein. (Prinzip von ausgeschlossenen dritten)
+\end{definition}
+\begin{remark}
+  Ein Beispiel beweist niemals eine Aussage. Ein Gegenbeispiel beweist hingegen, dass die Aussage falsch ist.
+\end{remark}
+
+\begin{definition}
+  Es seien $p, q$ Aussagen.
+  \begin{description}
+  \item[Konjunktion] $p \wedge q$
+  \item[Disjunktion] $p \vee q$
+  \item[Implikation] $p \implies q$
+  \item[Äquivalenz] $p \iff q$
+  \item[Exklusives Oder] $(p \vee q) \wedge (\neg p \vee \neg q)$
+  \end{description}
+\end{definition}
+
+\begin{definition}
+  Aussagenform $H(x)$: Aussage mit Variable
+\end{definition}
+\begin{example}
+  \begin{align*}
+    H_1(x) &:\iff (x^2 - 3x + 2 = 0) \\
+    H_2(x) &:\iff (x = 1 \vee x = 2) \\
+    H_1(x) &\iff H_2(x)
+  \end{align*}
+\end{example}
+
+\subsection{Beweisstruktur}
+Es sei $p \implies q$. $p$ heißt die vorraussetzung, $q$ heißt die Behauptung.
+
+Ein Beweis hat die Struktur von $p \implies r_1 \implies r_2 \implies \dots \implies r_n \implies q$. $r_1, \dots, r_n$ sind bereits bekannte wahre Aussagen oder Axiome.
+
+\begin{theorem}
+  Regeln der Aussagenlogik:
+  \begin{align*}
+    A &\implies A \\
+    (A \implies B) \wedge (B \implies C) &\implies (A \implies C) \tag{Transitivität} \\
+    (A \wedge B) \wedge C &\iff A \wedge B \wedge C & (A \vee B) \vee C &\iff A \vee B \vee C \tag{Assoziativität} \\
+    A \wedge B &\iff B \wedge A & A \vee B &\iff B \vee A \tag{Kommutativität} \\
+    A \wedge (B \vee C) &\iff (A \wedge B) \vee (A \wedge C) & A \vee (B \wedge C) &\iff (A \vee B) \wedge (A \vee C) \tag{Distributivität} \\
+    (B \implies C) &\implies (A \wedge B \implies A \wedge C) \tag{Monotonie} \\
+    \neg (A \wedge B) &\iff \neg A \vee \neg B & \neg (A \vee B) &\iff \neg A \wedge \neg B \tag{Morgan'sche Regeln} \\
+    \neg (\neg A) &\iff A \tag{Doppelte Negation}
+  \end{align*}
+\end{theorem}
+
+\subsection{Mengen}
+Nach Cantor ist eine Menge $M$ eine Zusammenfassung bestimmter, wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens (welche die Elemente von $M$ genannt werden) zu einem Ganzen.
+
+\begin{example}
+  \begin{align*}
+    A &:= {M, A, T, H, E, M, A, T, I, K} \\
+    \, &= {M, A, H, T, E, A, I, K} \\
+    \, &= {T, H, E, M, A, T, I, K} \\
+  \end{align*}
+\end{example}
+
+Man schreibt $x \in A$, wenn $A$ eine Menge ist und $x$ ein Element von $A$ ist. Ist $x$ kein Element von $A$, so schreibt man $x \not\in A$.
+
+Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es eine Menge $A := \{x|H(x)\}$. $x \in A \iff H(x)$.
+
+\begin{definition}
+  \begin{description}
+  \item[Gleichheit] Zwei Mengen $A$ und $B$ sind gleich, wenn sie dieselben Elemente enthalten.
+  \item[Leere Menge] Die leere Menge $\emptyset := \{\}$ ist die eindeutige Menge, welche kein Element enthält.
+  \item[Teilmenge] $A \subseteq B \iff \forall x \in A: x \in B$
+  \item[Echte Teilmenge] $A \subsetneq B \iff A \subseteq B \wedge A \ne B$
+  \item[Disjunkte Mengen] $\forall x \in A: x \not\in B$
+  \end{description}
+\end{definition}
+\begin{remark}
+  $A = B \iff A \subseteq B \wedge B \subseteq A$
+\end{remark}
+
+\begin{definition}
+  Operationen mit Mengen:
+  \begin{description}
+  \item[Durchschnitt] $A \cap B := \left\{ x \middle| x \in A \wedge x \in B \right\}$
+  \item[Vereinigung] $A \cup B := \left\{ x \middle| x \in A \vee x \in B \right\}$
+  \item[Differenz] $A \setminus B := \left\{ x \in A \wedge x \not\in B \right\}$
+  \item[Komplement] Für $A \subseteq M: A^C = A^C_M = M \setminus A$
+  \end{description}
+\end{definition}

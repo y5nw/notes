@@ -1,7 +1,9 @@
 auto
 *.aux
+*.fdb_latexmk
+*.fls
 *.idx
-*.ild
+*.ilg
 *.ind
 *.log
 *.out
