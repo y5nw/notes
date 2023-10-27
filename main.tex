@@ -34,8 +34,10 @@
 
 \def\phantomequal{\phantom{{}={}}}
 \def\bar#1{\overline{#1}}
+\def\hooktwoheadrightarrow{\hookrightarrow\mathrel{\mspace{-13mu}}\rightarrow}
 
 \makeindex[intoc]
+\makeindex[name=sym,title=Index Mathematischer Symbole,intoc]
 \begin{document}
 \newtheorem{theorem}{Satz}[section]
 \newtheorem{axiom}{Axiom}[section]
@@ -64,5 +66,6 @@
 \backmatter
 \part{Appendices}
 \printindex
+\printindex[sym]
 
 \end{document}

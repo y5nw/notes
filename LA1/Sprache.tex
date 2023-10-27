@@ -71,7 +71,7 @@ Es seien $A, B, C, D, \dots $ Aussagen.
 \end{itemize}
 
 \section{Sprache der Mengenlehre}
-\begin{definition}[Mengenlehre\index{Mengenlehre}]
+\begin{definition}[Mengenlehre\index{Menge}]
   Eine Menge $M$ ist eine Zusammenfassung von Objekten, so dass jedes „denkbare Objekt“ entweder in $M$ liegt oder nicht.
 \end{definition}
 
@@ -94,14 +94,14 @@ Zwei Mengen sind gleich, wenn sie dieselben Elemente haben: $\left\{ 1, a, \alph
 \end{example}
 
 \begin{definition}[Mengenoperationen]
-  \begin{align*}
-    M \cap N &:= \left\{ x \middle| x \in M \wedge x \in N \right\}\\
-    M \cup N &:= \left\{ x \middle| x \in M \vee x \in N \right\}\\
-    M \setminus N &:= \left\{ x \middle| x \in M \wedge x \not\in N \right\}\\
-    M \subseteq N &\iff (x \in M \implies x \in N) \\
-    M = N &\iff (x \in M \iff x \in N) \iff (M \subseteq N \wedge N \subseteq M) \\
-    M \subsetneq N &\iff M \subseteq N \wedge M \neq N
-  \end{align*}
+  \begin{description}
+  \item[Durchschnitt\index{Menge!Durchschnitt}] $M \cap N := \left\{ x \middle| x \in M \wedge x \in N \right\}$
+  \item[Vereinigung\index{Menge!Vereinigung}] $M \cup N := \left\{ x \middle| x \in M \vee x \in N \right\}$
+  \item[Differenz\index{Menge!Differenz}] $M \setminus N := \left\{ x \middle| x \in M \wedge x \not\in N \right\}$
+  \item[Teilmenge\index{Menge!Teilmenge}] $M \subseteq N \iff (x \in M \implies x \in N)$
+  \item[Gleichheit\index{Menge!Gleichheit}] $M = N \iff (x \in M \iff x \in N) \iff (M \subseteq N \wedge N \subseteq M)$
+  \item[Echte Teilmenge\index{Menge!Echte Teilmenge}] $M \subsetneq N \iff M \subseteq N \wedge M \neq N$
+  \end{description}
 \end{definition}
 
 \begin{theorem}
@@ -123,7 +123,7 @@ Zwei Mengen sind gleich, wenn sie dieselben Elemente haben: $\left\{ 1, a, \alph
 
 \begin{remark}
   \begin{itemize}
-  \item Leere Menge: $\emptyset := \{\}$\index{Mengenlehre!$\emptyset$}
+  \item Leere Menge: $\emptyset := \{\}$\index{Menge!Leere Menge}\index[sym]{$\emptyset$}
   \item Menge können andere Mengen als Elemente haben. $\left\{ \emptyset \right\}$ hat ein Element, $\left\{ \emptyset, \left\{ \emptyset \right\} \right\}$ hat zwei Elemente.
   \item Für $M:= \left\{ 1, \left\{ 2 \right\} \right\}$
     \begin{align*}
@@ -135,8 +135,8 @@ Zwei Mengen sind gleich, wenn sie dieselben Elemente haben: $\left\{ 1, a, \alph
   \end{itemize}
 \end{remark}
 
-\begin{definition}[Potenzmenge\index{Mengenlehre!Potenzmenge}]
-  $\mathscr{P}(M) := \left\{ N \middle| N \subseteq M \right\}$ ist die Potenzmenge einer Menge $M$. $\mathscr{A} \subseteq \mathscr{P}(M)$ ist ein Mengensystem\index{Mengenlehre!Mengensystem} über $M$.
+\begin{definition}[Potenzmenge]
+  $\mathscr{P}(M) := \left\{ N \middle| N \subseteq M \right\}$ ist die Potenzmenge\index{Menge!Mengensystem}\index[sym]{$\mathscr{P}(M)$} einer Menge $M$. $\mathscr{A} \subseteq \mathscr{P}(M)$ ist ein Mengensystem\index{Menge!Mengensystem}\index[sym]{$\mathscr{A}$} über $M$.
 \end{definition}
 
 \begin{remark}
@@ -152,3 +152,157 @@ Axiomatische Mengenlehre (grob zusammengefasst):
 \item Mengen: Klassen, die selbst Element einer Klasse sind.
 \end{itemize}
 \end{remark}
+
+\begin{definition}
+  Ist $A(x)$ ein Ausdruck, für die man für $x$ Elemente von $M$ einsetzen kann, so heißt $A(x)$ eine Aussageform\index{Menge!Aussageform} über $M$. $x$ ist die freie Variable.
+\end{definition}
+\begin{remark}
+  $\left\{ x \in M \middle| A(x) \right\} := \left\{ x \middle| x \in M \wedge A(x) \right\}$
+\end{remark}
+\begin{definition}
+  Quantoren\index{Menge!Quantor}
+  \begin{itemize}
+  \item $\forall x \in M: A(x)$: Für alle $x \in M$ ist $A(x)$ wahr.\index[sym]{$\forall$}
+  \item $\exists x \in M: A(x)$: Für mindestens ein $x \in M$ ist $A(x)$ wahr.\index[sym]{$\exists$}
+  \item $\exists! x \in M: A(x)$: Für genau ein $x \in M$ ist $A(x)$ wahr.
+  \end{itemize}
+\end{definition}
+\begin{remark}
+  Negation von Quantoren:
+  \begin{align*}
+    \neg (\forall x: A(x)) &\iff \exists x: \neg A(x) \\
+    \neg (\exists x: A(x)) &\iff \forall x: \neg A(x) \\
+  \end{align*}
+\end{remark}
+\begin{definition}[Äquivalenz von Aussageformen\index{Aussage!Äquivalenz}]
+  $(A(x) \iff B(x)) \iff (\forall x \in M: A(x) \iff B(x))$
+\end{definition}
+\begin{remark}
+  Quantoren werden von links nach rechts gelesen. Reihenfolge beachten!
+\end{remark}
+\begin{definition}
+  \begin{align*}
+    \bigcap \mathscr{A} &:= \left\{ x \in M \middle| \forall A in \mathscr{A}: x \in A \right\} \\
+    \bigcup \mathscr{A} &:= \left\{ x \in M \middle| \exists A in \mathscr{A}: x \in A \right\}
+  \end{align*}
+\end{definition}
+\begin{definition}
+  Sei $M$ eine endliche Menge, $|M|$ ist die Anzahl der Elemente von M.\index[sym]{$|M|$}
+\end{definition}
+\begin{remark}
+  \begin{align*}
+    |\mathscr{P}(M)| &= 2^{|M|} \\
+    |M \cup N| &= |M| + |N| - |M \cap N| \\
+  \end{align*}
+\end{remark}
+
+\section{Relationen und Funktionen}
+\begin{definition}[Geordnetes Paar\index{Relation!Geordnetes Paar}]
+  $(m, n) := \left\{ m, \left\{ m, n \right\} \right\}$
+\end{definition}
+\begin{definition}
+  $M \times N := \left\{ (m, n) \middle| m \in M \wedge N \in N \right\}$\index[sym]{$\times$}
+\end{definition}
+\begin{definition}
+  Eine Relation\index{Relation} $R = (M, N, G_R)$ besteht aus
+  \begin{itemize}
+  \item einer Definitionsmenge\index{Relation!Definitionsmenge} $M$
+  \item einer Zielmenge\index{Relation!Zielmenge} $N$ und
+  \item einer Menge $G_R \subset M \times N$ („Graph“)\index{Relation!Graph}
+  \end{itemize}
+
+  Relationen sind gleich, wenn die die gleiche Definitionsmengen, Zielmengen und Graphen haben
+  
+  Schreib- und Sprechweisen:
+  \begin{itemize}
+  \item „$m$ steht in $R$-Beziehung zu $n$“: $mRn \iff (m, n) \in G_R$
+  \item „$R$ ist Relation von $M$ nach $N$“
+  \item Ist $M=N$, so nennt ist es eine Relation auf $M$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Eine Relation $R = (M, N, G_R)$ heißt eine Funktion\index{Funktion}, falls
+  \[ \forall m \in M\, \exists! n \in N: (m, n) \in G_R \]
+  Ist $m \in M$ und $(m, n) = G_R$, so schreibt man $n = R(m)$
+  $n$ heißt das Bild\index{Funktion!Bild} von $m$ unter $R$.
+\end{definition}
+\begin{remark}
+  Ist $f = (M, N, G_f)$ eine Funktion, so schreibt man $M \stackrel{f}{=} N$ oder $f: M \to N$ oder $m \mapsto f(m)$.\index[sym]{$f(m)$}\index[sym]{$\to$}\index[sym]{$\mapsto$}
+
+  Funktion ist bestimmt durch $M$, $N$ und die Zuordnung.
+\end{remark}
+\begin{definition}
+  Es sei $f: M \to N$ eine Funktion.
+
+  Ist $A \subseteq M$, dann ist $f[A] = \left\{ f(m) \middle| m \in A \right\}$ das Bild von $A$.\index{Bild}\index[sym]{$f[A]$}
+
+  Ist $B \subseteq N$, dann ist $f^{-1}[B] = \left\{ m \in M \middle| f(m) \in B \right\}$ das Urbild von $B$.\index{Urbild}\index[sym]{$f^{-1}[B]$}
+
+  Ist $n \in N$, dann ist $f^{-1}[n] = f[{n}]$ die Faser\index{Faser} über $n$. Die Elemente von $f^{-1}[n]$ heißen Urbilder von $n$.\index[sym]{$f^{-1}[n]$}
+\end{definition}
+\begin{definition}
+  $f: M \to N, m \mapsto n$ heißt
+  \begin{itemize}
+  \item injektiv, wenn $\forall m_1, m_2 \in M: f(m_1) = f(m_2) \iff m_1 = m_2$ ($M \hookrightarrow N \implies \forall n \in N: |f^{-1}[n]| \le 1$)
+  \item surjektiv, wenn $f[M] = N$ ($M \twoheadrightarrow N \implies \forall n \in N: |f^{-1}[n]| \ge 1$)
+  \item bijektiv, wenn $f$ injektiv und surjektiv ist. ($M \hooktwoheadrightarrow N \implies \forall n \in N: |f^{-1}[n]| = 1$)
+  \end{itemize}
+\end{definition}
+\begin{definition}
+  Sei $A \subseteq M$, dann ist $f|_A: A \to N, a \mapsto f(a)$ Restriktion.\index{Funktion!Restriktion}
+
+  Sei $f[M] \subseteq B \subseteq N$, dann ist $f|^B: M \to B, m \mapsto f(m)$ Korrektion.\index{Funktion!Korrektion}
+\end{definition}
+\begin{remark}
+  Ist $M \to N$ bijektiv und $n \in N$, dann $\exists! m \in M: f(m) = n$. Man nennt $f^{-1}: N \to M, n \mapsto m$ Umkehrfunktion von $f$.\index{Funktion!Umkehrfunktion}
+\end{remark}
+
+\begin{definition}
+  Es sei $f: M \to N, g: N \to O$, dann ist $g \circ f: M \to O, m \mapsto g(f(m))$ eine Komposition. Man sagt „$g$ nach $f$“
+\end{definition}
+\begin{lemma}[Assoziativität der Komposition]
+  Es seien $f: M \to N, g: N \to O, h: O \to P$. $h \circ (g \circ f) = (h \circ g) \circ f$
+\end{lemma}
+\begin{proof}
+  Beides sind Funktionen von $M$ nach $P$ und
+  \begin{align*}
+    h \circ (g \circ f) (m) &= h (g \circ f (m)) \\
+    \, &= h(g(f(m))) \\
+    \, &= (h \circ g)(f(m)) \\
+    \, &= (h \circ g) \circ f (m)
+  \end{align*}
+\end{proof}
+
+\begin{remark}
+  $\operatorname{Id}_M: M \to M, m \mapsto m$ heißt Identität. Dann gilt für $f: M \to N$:
+  \begin{align*}
+    f \circ \operatorname{Id}_M &= f \\
+    \operatorname{Id}_M \circ f &= f
+  \end{align*}
+\end{remark}
+
+\begin{theorem}
+  Es sei $f: M \to N$ eine Funktion und $M \ne \emptyset$.
+  \begin{itemize}
+  \item Ist $f$ injektiv, dann $\exists g: N \to M: g \circ f = \operatorname{Id}_M$
+  \item Ist $f$ surjektiv, dann $\exists h: N \to M: f \circ h = \operatorname{Id}_N$
+  \item Ist $f$ bijektiv, dann $\exists g, h$ wie oben und $g = h = f^{-1}$ und $f \circ f = \operatorname{Id}_M$
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+  Man nimmt an, $f$ ist injektiv.
+
+  Man wählt $m_0 \in M$ (beachte: $M \ne \emptyset$). Ist $n \not\in \operatorname{Bild}(f)$, dann wählt man $g(n) = m$. Ist $n \in \operatorname{Bild}(f)$, wählt man $g(n) = m$.
+
+  Dann ist $(g \circ f)(m) = g(f(m)) = m = \operatorname{Id}_M(m)$
+
+  Sei $g$ wie oben. Für $m_1, m_2 \in M$ gilt
+  \begin{align*}
+    f(m_1) &= f(m_2) \\
+    \implies m_1 = \operatorname{Id}_M(m_1) &= (g \circ f)(m_1) \\
+    \, &= g(\underbrace{f(m_2)}_{= f(m_{1})}) = (g \circ f)(m_2) \\
+    \, &= \operatorname{Id}_M(m_2) = m_2 \\
+    \implies m_1 &= m_2
+  \end{align*}
+\end{proof}
