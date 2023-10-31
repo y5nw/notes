@@ -8,7 +8,7 @@
   \lstinputlisting[language=Java]{Prog/SimpleProgram/SimpleProgram.java}
 \end{example}
 
-\texttt{javac} Übersetzt Quellcode in Klassen. \texttt{java} führt das Programm aus. Dabei wird in der Klasse die Methode \texttt{main}\index{\texttt{main}} gestartet.
+\texttt{javac} Übersetzt Quellcode in Klassen. \texttt{java} führt das Programm aus. Dabei wird in der Klasse die Methode \texttt{main}\index[java]{\texttt{main}} gestartet.
 
 Compiler\index{Compiler}: Sie transformieren die Programm in maschinennahe Programme (oder Bytecode), die später ausgeführt werden. Der Quellcode wird in das Zielprogramm übersetzt.
 
@@ -22,11 +22,11 @@ Wenn man den Quellcode ändern, muss man das Programm wieder compilieren.
 
 \section{Objekten und Klassen}
 
-Jedes Objekt der Realität hat ein virtuelles Gegenstück. Objekte kooperieren durch Datenaustausch (z.B. „$A$ ruft eine Methode von $B$ auf“). Objekten werden durch drei Aspekte charakterisiert:
+Jedes Objekt der Realität hat ein virtuelles Gegenstück. Objekte\index{Java!Objekt} kooperieren durch Datenaustausch (z.B. „$A$ ruft eine Methode von $B$ auf“). Objekten werden durch drei Aspekte charakterisiert:
 \begin{itemize}
 \item Identität: Objektnamen (oder: Speicheradresse)
-\item Zustand: Attribute
-\item Verhalten: Methoden
+\item Zustand: Attribute\index{Java!Objekt!Attribut}
+\item Verhalten: Methoden\index{Java!Objekt!Methode}
 \end{itemize}
 
 Was modelliert man bei einem Billiard-Spiel?
@@ -35,7 +35,7 @@ Was modelliert man bei einem Billiard-Spiel?
 \item Bälle: Farbe, Gewicht, Position
 \end{itemize}
 
-Klasse: „Bauplan“ von Objekten. Sie legen fest, welche Attribute und Methoden die Objekt-Instanzen der Klassen haben können.
+Klasse\index{Java!Klasse}: „Bauplan“ von Objekten. Sie legen fest, welche Attribute und Methoden die Objekt-Instanzen\index{Java!Objekt!Instanz} der Klassen haben können.
 
 Operatoren werden mit dem \texttt{new}-Operator erzeugt.
 

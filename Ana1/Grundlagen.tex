@@ -96,7 +96,7 @@ $n$ ist ungerade, wenn $k \in \mathbb{N}$ existiert mit $n = 2k-1$.
     \, &= \frac{m^2 - lmn_*}{n_{*}(m-ln_{*})} \\
     \, &= \frac{kn^2 - lmn_{*}}{n_{*}(m-ln_{*}} \\
     \, &= \frac{\overbrace{kn - lm}^{\in \mathbb{Z}}}{m-ln_{*}} \\
-    \implies m-ln_{*} &\in \mathbb{A}
+    \implies m-ln_{*} &\in \mathbb{N}
   \end{align*}
   Widerspruch: $m-ln_{*} < n_{*}$
 \end{proof}
@@ -113,16 +113,16 @@ $n$ ist ungerade, wenn $k \in \mathbb{N}$ existiert mit $n = 2k-1$.
 \begin{definition}
   Es seien $p, q$ Aussagen.
   \begin{description}
-  \item[Konjunktion] $p \wedge q$
-  \item[Disjunktion] $p \vee q$
-  \item[Implikation] $p \implies q$
-  \item[Äquivalenz] $p \iff q$
-  \item[Exklusives Oder] $(p \vee q) \wedge (\neg p \vee \neg q)$
+  \item[Konjunktion\index{Aussage!Konjunktion}] $p \wedge q$\index[sym]{$\wedge$}
+  \item[Disjunktion\index{Aussage!Disjunktion}] $p \vee q$\index[sym]{$\vee$}
+  \item[Implikation\index{Aussage!Implikation}] $p \implies q$\index[sym]{$\implies$}
+  \item[Äquivalenz\index{Aussage!Äquivalenz}] $p \iff q$\index[sym]{$\iff$}
+  \item[Exklusives Oder\index{Aussage!Exklusives Oder}] $(p \vee q) \wedge (\neg p \vee \neg q)$
   \end{description}
 \end{definition}
 
 \begin{definition}
-  Aussagenform $H(x)$: Aussage mit Variable
+  Aussagenform $H(x)$: Aussage mit Variable\index{Aussage!Aussageform}
 \end{definition}
 \begin{example}
   \begin{align*}
@@ -141,18 +141,18 @@ Ein Beweis hat die Struktur von $p \implies r_1 \implies r_2 \implies \dots \imp
   Regeln der Aussagenlogik:
   \begin{align*}
     A &\implies A \\
-    (A \implies B) \wedge (B \implies C) &\implies (A \implies C) \tag{Transitivität} \\
-    (A \wedge B) \wedge C &\iff A \wedge B \wedge C & (A \vee B) \vee C &\iff A \vee B \vee C \tag{Assoziativität} \\
-    A \wedge B &\iff B \wedge A & A \vee B &\iff B \vee A \tag{Kommutativität} \\
-    A \wedge (B \vee C) &\iff (A \wedge B) \vee (A \wedge C) & A \vee (B \wedge C) &\iff (A \vee B) \wedge (A \vee C) \tag{Distributivität} \\
-    (B \implies C) &\implies (A \wedge B \implies A \wedge C) \tag{Monotonie} \\
-    \neg (A \wedge B) &\iff \neg A \vee \neg B & \neg (A \vee B) &\iff \neg A \wedge \neg B \tag{Morgan'sche Regeln} \\
-    \neg (\neg A) &\iff A \tag{Doppelte Negation}
+    (A \implies B) \wedge (B \implies C) &\implies (A \implies C) \tag{Transitivität\index{Aussage!Transitivität}} \\
+    (A \wedge B) \wedge C &\iff A \wedge B \wedge C & (A \vee B) \vee C &\iff A \vee B \vee C \tag{Assoziativität\index{Aussage!Assoziativgesetz}} \\
+    A \wedge B &\iff B \wedge A & A \vee B &\iff B \vee A \tag{Kommutativität\index{Aussage!Kommutativgesetz}} \\
+    A \wedge (B \vee C) &\iff (A \wedge B) \vee (A \wedge C) & A \vee (B \wedge C) &\iff (A \vee B) \wedge (A \vee C) \tag{Distributivität\index{Aussage!Distributivgesetz}} \\
+    (B \implies C) &\implies (A \wedge B \implies A \wedge C) \tag{Monotonie\index{Aussage!Monotonie}} \\
+    \neg (A \wedge B) &\iff \neg A \vee \neg B & \neg (A \vee B) &\iff \neg A \wedge \neg B \tag{De Morgansche Regeln\index{Aussage!De Morgansche Regeln}} \\
+    \neg (\neg A) &\iff A \tag{Doppelte Negation\index{Aussage!Doppelte Negation}}
   \end{align*}
 \end{theorem}
 
 \subsection{Mengen}
-Nach Cantor ist eine Menge $M$ eine Zusammenfassung bestimmter, wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens (welche die Elemente von $M$ genannt werden) zu einem Ganzen.
+Nach Cantor ist eine Menge\index{Menge} $M$ eine Zusammenfassung bestimmter, wohlunterschiedener Objekte unserer Anschauung oder unseres Denkens (welche die Elemente von $M$ genannt werden) zu einem Ganzen.
 
 \begin{example}
   \begin{align*}
@@ -162,17 +162,17 @@ Nach Cantor ist eine Menge $M$ eine Zusammenfassung bestimmter, wohlunterschiede
   \end{align*}
 \end{example}
 
-Man schreibt $x \in A$, wenn $A$ eine Menge ist und $x$ ein Element von $A$ ist. Ist $x$ kein Element von $A$, so schreibt man $x \not\in A$.
+Man schreibt $x \in A$\index[sym]{$\in$}, wenn $A$ eine Menge ist und $x$ ein Element\index{Menge!Element} von $A$ ist. Ist $x$ kein Element von $A$, so schreibt man $x \not\in A$.
 
 Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es eine Menge $A := \{x|H(x)\}$. $x \in A \iff H(x)$.
 
 \begin{definition}
   \begin{description}
-  \item[Gleichheit] Zwei Mengen $A$ und $B$ sind gleich, wenn sie dieselben Elemente enthalten.
-  \item[Leere Menge] Die leere Menge $\emptyset := \{\}$ ist die eindeutige Menge, welche kein Element enthält.
-  \item[Teilmenge] $A \subseteq B \iff \forall x \in A: x \in B$
-  \item[Echte Teilmenge] $A \subsetneq B \iff A \subseteq B \wedge A \ne B$
-  \item[Disjunkte Mengen] $\forall x \in A: x \not\in B$
+  \item[Gleichheit] Zwei Mengen $A$ und $B$ sind gleich, wenn sie dieselben Elemente enthalten.\index{Menge!Gleichheit}
+  \item[Leere Menge] Die leere Menge $\emptyset := \{\}$ ist die eindeutige Menge, welche kein Element enthält.\index{Menge!Leere Menge}\index[sym]{$\emptyset$}
+  \item[Teilmenge] $A \subseteq B \iff \forall x \in A: x \in B$\index{Menge!Teilmenge}\index[sym]{$\subseteq$}
+  \item[Echte Teilmenge] $A \subsetneq B \iff A \subseteq B \wedge A \ne B$\index{Menge!Echte Teilmenge}\index[sym]{$\subsetneq$}
+  \item[Disjunkte Mengen] $\forall x \in A: x \not\in B$\index{Menge!Disjunkte Mengen}
   \end{description}
 \end{definition}
 \begin{remark}
@@ -182,9 +182,176 @@ Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es 
 \begin{definition}
   Operationen mit Mengen:
   \begin{description}
-  \item[Durchschnitt] $A \cap B := \left\{ x \middle| x \in A \wedge x \in B \right\}$
-  \item[Vereinigung] $A \cup B := \left\{ x \middle| x \in A \vee x \in B \right\}$
-  \item[Differenz] $A \setminus B := \left\{ x \in A \wedge x \not\in B \right\}$
-  \item[Komplement] Für $A \subseteq M: A^C = A^C_M = M \setminus A$
+  \item[Durchschnitt] $A \cap B := \left\{ x \middle| x \in A \wedge x \in B \right\}$\index{Menge!Durchschnitt}\index[sym]{$\cap$}
+  \item[Vereinigung] $A \cup B := \left\{ x \middle| x \in A \vee x \in B \right\}$\index{Menge!Vereinigung}\index[sym]{$\cup$}
+  \item[Differenz] $A \setminus B := \left\{ x \in A \wedge x \not\in B \right\}$\index{Menge!Differenz}\index[sym]{$\setminus$}
+  \item[Komplement] Für $A \subseteq M: A^C = A^C_M = M \setminus A$\index{Menge!Komplement}
   \end{description}
 \end{definition}
+
+\begin{theorem}
+  Es seien $A$, $B$, $C$, $M$ Mengen.
+
+  \begin{align*}
+    A \cap B &= B \cap A & A \cup B &= B \cup A \tag{Transitivgesetz\index{Menge!Kommutativgesetz}} \\
+    A \cap (B \cap C) &= (A \cap B) \cap C & A \cup (B \cup C) &= (A \cup B) \cup C) \tag{Assoziativgesetz\index{Menge!Assoziativgesetz}} \\
+    A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) & A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) \tag{Distributivgesetz\index{Menge!Distributivgesetz}}
+  \end{align*}
+\end{theorem}
+\begin{proof}
+  \begin{align*}
+    A \cap B &= \left\{ x \middle| x \in A \wedge x \in B \right\} \\
+    \, &= \left\{ x \middle| x \in B \wedge x \in A \right\} \\
+    \, &= B \cap A \\
+    x \in A \cup (B \cap C) &\iff x \in A \vee (x \in B \wedge x \in C) \\
+    \, &\iff (x \in A \vee x \in B) \wedge (x \in A \vee x \in C) \\
+    \, &\iff x \in (A \cup B) \cap (A \cup C)
+  \end{align*}
+\end{proof}
+
+\begin{definition}[Mengenfamilie\index{Menge!Mengenfamilie}]
+  Sei $J \ne \emptyset$ eine Indexmenge\index{Menge!Indexmenge}. Die Mengenfamilie ist gegeben durch die Mengen $A_j$ für jedes $j \in J$.
+\end{definition}
+
+\begin{definition}
+  Gegeben ist $\{A\}_{j \in J}, J \ne \emptyset$.
+  \begin{align*}
+    \bigcap_{j \in J} A_j &:= \left\{ x \middle| \forall j \in J: x \in A_j \right\} \\
+    \bigcup_{j \in J} A_j &:= \left\{ x \middle| \exists j \in J: x \in A_j \right\}
+  \end{align*}
+\end{definition}
+
+\begin{definition}[Quantoren\index{Menge!Quantor}]
+  \begin{itemize}
+  \item $\forall$: „Für alle“\index[sym]{$\forall$}
+  \item $\exists$: „Es existiert“\index[sym]{$\exists$}
+  \item $\exists!$: „Es existiert genau eins“\index[sym]{$\exists"!"$}
+  \end{itemize}
+\end{definition}
+
+\begin{example}[Aussageformen]
+  Es sei $H(x)$ eine Aussageform und $A$ eine Menge. Man schreibt z.B.
+  \begin{itemize}
+  \item $\forall x \in A: H(x)$
+  \item $\exists x \in A: H(x)$
+  \item $\exists! x \in A: H(x)$
+  \end{itemize}
+
+  Es sei $H(x, y)$ eine Aussageform und $A, B$ Mengen. Man schreibt z.B.
+  \begin{itemize}
+  \item $\forall x \in A\: \exists y \in B: H(x, y)$
+  \item $\exists x \in A\: \forall y \in B: H(x, y)$
+  \end{itemize}
+\end{example}
+
+\begin{remark}[Negation von Quantoren]
+  \begin{align*}
+    \neg (\forall x \in A: H(x)) &\iff \exists x \in A: \neg H(x) \\
+    \neg (\exists x \in A: H(x)) &\iff \forall x \in A: \neg H(x)
+  \end{align*}
+\end{remark}
+
+\begin{example}
+  \begin{align*}
+    \neg (\forall x \in A\: \exists y \in B: H(x, y)) &\iff \exists x \in A: \neg (\exists y \in B: H(x, y)) \\
+    \, &= \exists x \in A\: \forall y \in B: \neg H(x, y) \\
+    \neg (\exists x \in A\: \forall y \in B: H(x, y)) &\iff \forall x \in A\: \exists y \in B: \neg H(x, y)
+  \end{align*}
+\end{example}
+
+\begin{definition}[Potenzmenge\index{Menge!Potenzmenge}]
+  Ist $A$ eine Menge, so heißt $\mathscr{P}(A) := \left\{ N \middle| x \subseteq A \right\}$ Potenzmenge von A.\index[sym]{P(M)@$\mathscr{P}(M)$}
+
+  Eine Teilmenge $\mathscr{A} \in \mathscr{P}(A)$ heißt Mengensystem\index{Menge!Mengensystem} über $A$.\index[sym]{A@$\mathscr{A}$}
+\end{definition}
+\begin{example}
+  \begin{align*}
+    \mathscr{P}(\emptyset) &= \left\{ \emptyset \right\} \\
+    \mathscr{P}(\left\{ \emptyset \right\}) &= \left\{ \emptyset, \left\{ \emptyset \right\} \right\}
+  \end{align*}
+\end{example}
+
+\begin{remark}[Russels „Paradox“\index{Menge!Russels Paradox}]
+  Es sei $R := \left\{ M \middle| M \text{ ist eine Menge} \wedge M \not\in M \right\}$
+
+  Ist $R$ eine Menge, so kann man fragen, ob $R \in R$ ist
+  \begin{align*}
+    R \not\in R \stackrel{\text{Def}}{\iff} R \in R \\
+    R \in R \stackrel{\text{Def}}{\iff} R \not\in R
+  \end{align*}
+
+  Auflösung durch moderne Mengenlehre: $R$ definiert keine Menge, sondern eine Klasse.
+
+  Ähnlich: $\mathscr{M} := \left\{ M | M \text{ ist eine Menge} \right\}$ ist eine Klasse und keine Menge.
+\end{remark}
+
+\subsection{Kartesisches Product}
+\begin{definition}
+  Es seien $A, B$ Mengen. Für $a \in A, b \in B$ ist $(a, b) := \left\{ a, \left\{ a, b \right\} \right\}$ ein grordnetes Paar (2-Tupel) aus $a$ und $b$.\index{Menge!Geordnetes Paar}\index{Menge!Tupel}
+
+  Für $a_1, a_2 \in A, b_1, b_2 \in B$ ist $(a_1, b_1) = (a_2, b_2) \iff a_1 = b_1 \wedge a_2 = b_2$
+
+  $A \times B := \left\{ (a, b) \middle| a \in A, b \in B \right\}$ heißt das kartesische Produkt von $A$ und $B$.\index{Menge!Kartesisches Produkt}\index[sym]{$\times$}
+\end{definition}
+
+\begin{definition}
+  Eine Relation\index{Relation} $R := (A, B, G)$ besteht aus
+  \begin{itemize}
+  \item einer Definitionsmenge\index{Relation!Definitionsmenge} $A$,
+  \item einer Zielmenge\index{Relation!Zielmenge} $B$ und
+  \item einem Graph\index{Relation!Graph} $G \subseteq A \times B$ (man schreibt auch $G_R$)
+  \end{itemize}
+
+  Ist $(a, b) \in G$, so sagt man „$a$ ist $R$-verwandt zu $b$“ und man schreibt $a\, R\, b$.
+
+  $R_1 = R_2 \iff A_1 = A_2 \wedge B_1 = B_2 \wedge R_1 = R_2$
+
+  Die inverse Relation\index{Relation!Inverse Relation} ist definiert durch $R^{-1} := (B, A, G_{R^{-1}}), G_{R^{-1}} := \left\{ (b, a) \middle| (a, b) \in G_R \right\}$
+\end{definition}
+
+\begin{definition}
+  Sei $R = (A, B, G)$ eine Relation.
+  \begin{itemize}
+  \item $R$ ist reflexiv\index{Relation!Reflexiv}, wenn $\forall a \in a: a\, R\, a$
+  \item $R$ ist symmetrisch\index{Relation!Symmetrisch}, wenn $\forall a_1, a_2 \in A: a_1\, R\, a_2 \iff a_2\, R\, a_1$
+  \item $R$ is transitiv\index{Relation!Transitiv}, wenn $\forall a_1, a_2, a_3 \in A: a_1\, R\, a_2 \wedge a_2\, R\, a_3 \implies a_1\, R\, a_3$
+  \item Eine Äquivalenzrelation\index{Relation!Äquivalenzrelation} ist eine reflexive, symmetrische und transitive Relation (auf $A$).
+  \item Ist $a_1\,R\,a_2$, so nennt man $a_1$ äquivalent\index{Relation!Äquivalenz} zu $a_2$ bezüglich $R$. Man schreibt $a_1 \sim_R a_2$.\index[sym]{$\sim_R$}
+  \end{itemize}
+
+  Sei $R$ eine Äquivalenzrelation auf $A$, dann ist $[a]_R := \left\{ b \in A \middle| a\,R\,b \right\}$ die Äquivalenzklasse.\index{Relation!Äquivalenzklasse}\index[sym]{$[a]_R$}
+\end{definition}
+\begin{remark}
+  Sei $R$ Äquivalenzrelation, dann ist $\forall a \in A: [a]_R \ne \emptyset$
+
+  $a_1, a_2 \in [a]_R \implies a_1 \sim_R a_2, a_2 \sim_R a_1$
+\end{remark}
+\begin{lemma}
+  Sei $R$ eine Äquivalenzrelation auf $A \ne \emptyset$. Für $a_1, a_2 \in R$ ist entweder $[a_1]_R = [a_2]_R$ oder $[a_1]_R \cap [a_2]_R = \emptyset$.
+\end{lemma}
+\begin{proof}
+  Da $[a_1]_R \ne \emptyset, [a_2]_R \ne \emptyset$, ist zu zeigen: $[a_1]_R \cap [a_2]_R = \emptyset \implies [a_1]_R = [a_2]_R$.
+
+  Es sei $b \in [a_1]_R \cap [a_2]_R$.
+
+  Sei $c \in [a_1]_R, c \sim_R a_1$ und $b \sim_R a_1 \implies a_1 \sim_R b \implies c \sim_R b$.
+
+  Auch $b \in [a_1]_R: b \sim_R a_2$
+
+  $\implies c \sim_R a_2 \implies c \in [a_2]_R \implies [a_1]_R \subseteq [a_2]_R$. Aus Symmetrie des Arguments: $[a_2]_R \subseteq [a_1]_R$
+\end{proof}
+\begin{corollary}
+  Es sei $R$ eine Äquivalenzrelation auf $A \ne \emptyset$
+
+  Dann sind $a_1, a_2 \in A$ entweder äquivalent oder sie gehören zu disjunkten Äquivalenzklassen.
+\end{corollary}
+\begin{remark}
+  Sei $A \ne \emptyset$ eine Menge. Man definiert die Zerlegung\index{Relation!Zerlegung} $F = \left\{ A_j \right\}_{j \in J}, \forall j \in J: A_j \in A$ mit
+  \begin{itemize}
+  \item $\forall j \in J: A_j \ne \emptyset$
+  \item $\forall j_1, j_2 \in J, j_1 \ne j_2: A_{j_1} \cap A_{j_2} = \emptyset$
+  \item $\bigcup_{j \in J} A_j = A$
+  \end{itemize}
+
+  Sei $R$ ein Äquivalenzrelation auf $A$ und $F:= \left\{ [a]_R \middle| a \in A \right\}$ ist eine Zerlegung von $A$. Man schreibt $F = A / R$ oder $A /_{\sim} R$\index[sym]{$/$}\index[sym]{$/_{\sim}$}
+\end{remark}

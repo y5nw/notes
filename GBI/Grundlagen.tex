@@ -1,0 +1,25 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Mengen, Alphabete, Abbildungen}
+
+Eine Menge\index{Menge} ist ein „Behälter“ von „Objekten“ (Elementen).
+
+\begin{definition}
+  \begin{align*}
+    \emptyset &:= \{\} \tag{leere Menge\index{Menge!Leere Menge}} \\
+    x \in A \cup B &:\iff x \in A \vee x \in B \tag{Vereinigung\index{Menge!Vereinigung}}\\
+    x \in A \cap B &:\iff x \in A \wedge x \in B \tag{Durchschnitt\index{Menge!Durchschnitt}}\\
+    A \subseteq B &:\iff x \in A \implies x \in B \tag{Teilmenge und Obermenge\index{Menge!Teilmenge}\index{Menge!Obermenge}}\\
+    A = B &:\iff A \subseteq B \wedge B \subseteq A \tag{Gleichheit\index{Menge!Gleichheit}} \\
+    A \subsetneq B &:\iff A \subseteq B \wedge A \ne B \tag{Echte Teilmenge\index{Menge!Echte Teilmenge}}
+  \end{align*}
+  Ist $A \cap B = \emptyset$, dann sind $A$ und $B$ disjunkte Mengen\index{Menge!Disjunkte Mengen}.
+  \index[sym]{$\emptyset$}\index[sym]{$\cup$}\index[sym]{$\cap$}\index[sym]{$\subseteq$}\index[sym]{$\subsetneq$}\index[sym]{$=$}
+\end{definition}
+\begin{lemma}
+  \begin{align*}
+    A \cup A &= A & A \cap A &= A \tag{Idempotenzgesetz\index{Menge!Idempotenzgesetz}} \\
+    A \cup B &= B \cup A & A \cap B &= B \cap A \tag{Kommutativgesetz\index{Menge!Kommutativgesetz}} \\
+    (A \cup B) \cup C &= A \cup (B \cup C) & (A \cap B) \cap C &= A \cap (B \cap C) \tag{Assoziativgesetz\index{Menge!Assoziativgesetz}} \\
+    A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) & A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) \tag{Distributivgesetz\index{Menge!Distributivgesetz}}
+  \end{align*}
+\end{lemma}

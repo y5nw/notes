@@ -12,12 +12,12 @@ Sprache der Aussagelogik und Mengenlehre: es geht um Aussagen.
 Es seien $A, B, C, D, \dots $ Aussagen.
 
 \begin{itemize}
-\item $\neg A$: Negation von $A$: „$A$ ist falsch“
-\item $A \wedge B$: Kunjunktion: „$A$ und $B$ sind beide wahr“
-\item $A \vee B$: Disjunktion: „Mindestens eine von $A$ und $B$ ist wahr“
+\item $\neg A$: Negation von $A$: „$A$ ist falsch“\index{Aussage!Negation}\index[sym]{$\neg$}
+\item $A \wedge B$: Kunjunktion: „$A$ und $B$ sind beide wahr“\index{Aussage!Konjunktion}\index[sym]{$\wedge$}
+\item $A \vee B$: Disjunktion: „Mindestens eine von $A$ und $B$ ist wahr“\index{Aussage!Disjunktion}\index[sym]{$\vee$}
 \item $C :\iff (A \wedge B) \vee (\neg A \wedge \neg B)$: Definition/Zuweisung von (z.B.) $C$
-\item $A \implies B :\iff (\neg A) \vee B$: Implikation: „$A$ impliziert  $B$“
-\item $A \iff B :\iff (A \implies B) \wedge (B \implies A)$: Äquivalenz
+\item $A \implies B :\iff (\neg A) \vee B$: Implikation: „$A$ impliziert $B$“\index{Aussage!Implikation}\index[sym]{$\implies$}
+\item $A \iff B :\iff (A \implies B) \wedge (B \implies A)$: Äquivalenz\index{Aussage!Äquivalenz}\index[sym]{$\iff$}
 \end{itemize}
 
 \begin{tabularx}{1.0\linewidth}{|X|X|X|X|X|X|X|X|}
@@ -37,12 +37,12 @@ Es seien $A, B, C, D, \dots $ Aussagen.
   Eigeschaften:
   \begin{itemize}
   \item $A \implies A$
-  \item Transitivität: $(A \implies B) \wedge (B \implies C) \implies (A \implies C)$
-  \item Assoziativ: $(A \wedge B) \wedge C \iff A \wedge (B \wedge C);\; (A \vee B) \vee C \iff A \vee (B \vee C)$
-  \item Kommutativ: $A \wedge B \iff B \wedge A;\; A \vee B \iff B \vee A$
-  \item Distributiv: $A \wedge (B \vee C) \iff (A \wedge B) \vee (A \wedge C);\; A \vee (B \wedge C) \iff (A \vee B) \wedge (A \vee C)$
+  \item Transitivität\index{Aussage!Transitivität}: $(A \implies B) \wedge (B \implies C) \implies (A \implies C)$
+  \item Assoziativ\index{Aussage!Assoziativgesetz}: $(A \wedge B) \wedge C \iff A \wedge (B \wedge C);\; (A \vee B) \vee C \iff A \vee (B \vee C)$
+  \item Kommutativ\index{Aussage!Kommutativgesetz}: $A \wedge B \iff B \wedge A;\; A \vee B \iff B \vee A$
+  \item Distributiv\index{Aussage!Distributivgesetz}: $A \wedge (B \vee C) \iff (A \wedge B) \vee (A \wedge C);\; A \vee (B \wedge C) \iff (A \vee B) \wedge (A \vee C)$
   \item $\neg (A \wedge B) \iff (\neg A) \vee (\neg B);\; \neg (A \vee B) \iff (\neg A) \wedge (\neg B)$
-  \item Doppelte Negation: $\neg (\neg A) \iff A$
+  \item Doppelte Negation\index{Aussage!Doppelte Negation}: $\neg (\neg A) \iff A$
   \end{itemize}
 \end{theorem}
 
@@ -53,7 +53,7 @@ Es seien $A, B, C, D, \dots $ Aussagen.
   \end{itemize}
 \end{remark}
 
-\begin{corollary}[Kontraposition]
+\begin{corollary}[Kontraposition\index{Aussage!Kontraposition}]
   $(A \implies B) \iff (\neg B \implies \neg A)$
 \end{corollary}
 \begin{proof}
@@ -76,7 +76,7 @@ Es seien $A, B, C, D, \dots $ Aussagen.
 \end{definition}
 
 \begin{itemize}
-\item $x \in M$: „$x$ liegt in $M$“
+\item $x \in M$: „$x$ liegt in $M$“\index[sym]{$\in$}
 \item $x \not\in M$: „ $x$ liegt nicht in $M$“
 \item Definition von Mengen: $M := \left\{ 1, a, \alpha \right\}$
 \end{itemize}
@@ -95,12 +95,12 @@ Zwei Mengen sind gleich, wenn sie dieselben Elemente haben: $\left\{ 1, a, \alph
 
 \begin{definition}[Mengenoperationen]
   \begin{description}
-  \item[Durchschnitt\index{Menge!Durchschnitt}] $M \cap N := \left\{ x \middle| x \in M \wedge x \in N \right\}$
-  \item[Vereinigung\index{Menge!Vereinigung}] $M \cup N := \left\{ x \middle| x \in M \vee x \in N \right\}$
-  \item[Differenz\index{Menge!Differenz}] $M \setminus N := \left\{ x \middle| x \in M \wedge x \not\in N \right\}$
-  \item[Teilmenge\index{Menge!Teilmenge}] $M \subseteq N \iff (x \in M \implies x \in N)$
-  \item[Gleichheit\index{Menge!Gleichheit}] $M = N \iff (x \in M \iff x \in N) \iff (M \subseteq N \wedge N \subseteq M)$
-  \item[Echte Teilmenge\index{Menge!Echte Teilmenge}] $M \subsetneq N \iff M \subseteq N \wedge M \neq N$
+  \item[Durchschnitt\index{Menge!Durchschnitt}] $M \cap N := \left\{ x \middle| x \in M \wedge x \in N \right\}$\index[sym]{$\cap$}
+  \item[Vereinigung\index{Menge!Vereinigung}] $M \cup N := \left\{ x \middle| x \in M \vee x \in N \right\}$\index[sym]{$\cup$}
+  \item[Differenz\index{Menge!Differenz}] $M \setminus N := \left\{ x \middle| x \in M \wedge x \not\in N \right\}$\index[sym]{$\setminus$}
+  \item[Teilmenge\index{Menge!Teilmenge}] $M \subseteq N \iff (x \in M \implies x \in N)$\index[sym]{$\subseteq$}
+  \item[Gleichheit\index{Menge!Gleichheit}] $M = N \iff (x \in M \iff x \in N) \iff (M \subseteq N \wedge N \subseteq M)$\index[sym]{$=$}
+  \item[Echte Teilmenge\index{Menge!Echte Teilmenge}] $M \subsetneq N \iff M \subseteq N \wedge M \neq N$\index[sym]{$\subsetneq$}
   \end{description}
 \end{definition}
 
@@ -108,15 +108,12 @@ Zwei Mengen sind gleich, wenn sie dieselben Elemente haben: $\left\{ 1, a, \alph
   Für Mengen $M$, $N$ und $O$ gilt (vgl. logische Operatoren):
   \begin{align*}
     M &\subseteq M\\
-    (M \subseteq N \wedge N \subseteq O) &\implies M \subseteq O\\
-    (M \cap N) \cap O &= M \cap (N \cap O) \\
-    M \cap N &= N \cap M\\
-    M \cup N &= N \cup M\\
-    M \cap (N \cup O) &= (M \cap N) \cup (M \cap O)\\
-    M \cup (N \cap O) &= (M \cup N) \cap (M \cup O)\\
+    (M \subseteq N \wedge N \subseteq O) &\implies M \subseteq O \tag{Transitivität\index{Menge!Transitivität}}\\
+    (M \cap N) \cap O &= M \cap (N \cap O) & (M \cup N) \cup O &= M \cup (N \cup O)  \tag{Assoziativgesetz\index{Menge!Assoziativgesetz}} \\
+    M \cap N &= N \cap M & M \cup N &= N \cup M \tag{Kommutativgesetz\index{Menge!Kommutativgesetz}} \\
+    M \cap (N \cup O) &= (M \cap N) \cup (M \cap O) & M \cup (N \cap O) &= (M \cup N) \cap (M \cup O) \tag{Distributivgesetz\index{Menge!Distributivgesetz}} \\
     N \subseteq O &\implies M \cap N \subseteq M \cap O \\
-    O \setminus (M \cap N) &= (O \setminus M) \cup (O \setminus N) \\
-    O \setminus (M \cup N) &= (O \setminus M) \cap (O \setminus N) \\
+    O \setminus (M \cap N) &= (O \setminus M) \cup (O \setminus N) & O \setminus (M \cup N) &= (O \setminus M) \cap (O \setminus N) \\
     O \setminus (O \setminus M) &= M \cap O
   \end{align*}
 \end{theorem}
@@ -136,11 +133,11 @@ Zwei Mengen sind gleich, wenn sie dieselben Elemente haben: $\left\{ 1, a, \alph
 \end{remark}
 
 \begin{definition}[Potenzmenge]
-  $\mathscr{P}(M) := \left\{ N \middle| N \subseteq M \right\}$ ist die Potenzmenge\index{Menge!Mengensystem}\index[sym]{$\mathscr{P}(M)$} einer Menge $M$. $\mathscr{A} \subseteq \mathscr{P}(M)$ ist ein Mengensystem\index{Menge!Mengensystem}\index[sym]{$\mathscr{A}$} über $M$.
+  $\mathscr{P}(M) := \left\{ N \middle| N \subseteq M \right\}$ ist die Potenzmenge\index{Menge!Potenzmenge}\index[sym]{P(M)@$\mathscr{P}(M)$} einer Menge $M$. $\mathscr{A} \subseteq \mathscr{P}(M)$ ist ein Mengensystem\index{Menge!Mengensystem}\index[sym]{A@$\mathscr{A}$} über $M$.
 \end{definition}
 
 \begin{remark}
-Russell (1901): Es sei $R := \left\{ M \middle| M \text{ ist Menge} \wedge M \not\in M \right\}$. Ist $R$ in $R$?
+Russell (1901): Es sei $R := \left\{ M \middle| M \text{ ist Menge} \wedge M \not\in M \right\}$. Ist $R$ in $R$?\index{Menge!Russels Paradox}
 \begin{align*}
   R \in R &\implies R \not\in R \\
   R \not\in R &\implies R \in R
@@ -164,7 +161,7 @@ Axiomatische Mengenlehre (grob zusammengefasst):
   \begin{itemize}
   \item $\forall x \in M: A(x)$: Für alle $x \in M$ ist $A(x)$ wahr.\index[sym]{$\forall$}
   \item $\exists x \in M: A(x)$: Für mindestens ein $x \in M$ ist $A(x)$ wahr.\index[sym]{$\exists$}
-  \item $\exists! x \in M: A(x)$: Für genau ein $x \in M$ ist $A(x)$ wahr.
+  \item $\exists! x \in M: A(x)$: Für genau ein $x \in M$ ist $A(x)$ wahr.\index[sym]{$\exists"!"$}
   \end{itemize}
 \end{definition}
 \begin{remark}
@@ -197,10 +194,10 @@ Axiomatische Mengenlehre (grob zusammengefasst):
 \end{remark}
 
 \section{Relationen und Funktionen}
-\begin{definition}[Geordnetes Paar\index{Relation!Geordnetes Paar}]
+\begin{definition}[Geordnetes Paar\index{Menge!Geordnetes Paar}]
   $(m, n) := \left\{ m, \left\{ m, n \right\} \right\}$
 \end{definition}
-\begin{definition}
+\begin{definition}[Kartesisches Produkt\index{Menge!Kartesisches Produkt}]
   $M \times N := \left\{ (m, n) \middle| m \in M \wedge N \in N \right\}$\index[sym]{$\times$}
 \end{definition}
 \begin{definition}
@@ -217,7 +214,7 @@ Axiomatische Mengenlehre (grob zusammengefasst):
   \begin{itemize}
   \item „$m$ steht in $R$-Beziehung zu $n$“: $mRn \iff (m, n) \in G_R$
   \item „$R$ ist Relation von $M$ nach $N$“
-  \item Ist $M=N$, so nennt ist es eine Relation auf $M$.
+  \item Ist $M=N$, so nennt man es eine Relation auf $M$.
   \end{itemize}
 \end{definition}
 
@@ -228,38 +225,38 @@ Axiomatische Mengenlehre (grob zusammengefasst):
   $n$ heißt das Bild\index{Funktion!Bild} von $m$ unter $R$.
 \end{definition}
 \begin{remark}
-  Ist $f = (M, N, G_f)$ eine Funktion, so schreibt man $M \stackrel{f}{=} N$ oder $f: M \to N$ oder $m \mapsto f(m)$.\index[sym]{$f(m)$}\index[sym]{$\to$}\index[sym]{$\mapsto$}
+  Ist $f = (M, N, G_f)$ eine Funktion, so schreibt man $M \stackrel{f}{=} N$ oder $f: M \to N$ oder $m \mapsto f(m)$.\index[sym]{f(m)@$f(m)$}\index[sym]{$\to$}\index[sym]{$\mapsto$}
 
   Funktion ist bestimmt durch $M$, $N$ und die Zuordnung.
 \end{remark}
 \begin{definition}
   Es sei $f: M \to N$ eine Funktion.
 
-  Ist $A \subseteq M$, dann ist $f[A] = \left\{ f(m) \middle| m \in A \right\}$ das Bild von $A$.\index{Bild}\index[sym]{$f[A]$}
+  Ist $A \subseteq M$, dann ist $f[A] = \left\{ f(m) \middle| m \in A \right\}$ das Bild von $A$.\index{Funktion!Bild}\index[sym]{f[A]@$f[A]$}
 
-  Ist $B \subseteq N$, dann ist $f^{-1}[B] = \left\{ m \in M \middle| f(m) \in B \right\}$ das Urbild von $B$.\index{Urbild}\index[sym]{$f^{-1}[B]$}
+  Ist $B \subseteq N$, dann ist $f^{-1}[B] = \left\{ m \in M \middle| f(m) \in B \right\}$ das Urbild von $B$.\index{Funktion!Urbild}\index[sym]{f-1[B]@$f^{-1}[B]$}
 
-  Ist $n \in N$, dann ist $f^{-1}[n] = f[{n}]$ die Faser\index{Faser} über $n$. Die Elemente von $f^{-1}[n]$ heißen Urbilder von $n$.\index[sym]{$f^{-1}[n]$}
+  Ist $n \in N$, dann ist $f^{-1}[n] = f[{n}]$ die Faser\index{Funktion!Faser} über $n$. Die Elemente von $f^{-1}[n]$ heißen Urbilder von $n$.\index[sym]{f-1[n]@$f^{-1}[n]$}
 \end{definition}
 \begin{definition}
   $f: M \to N, m \mapsto n$ heißt
   \begin{itemize}
-  \item injektiv, wenn $\forall m_1, m_2 \in M: f(m_1) = f(m_2) \iff m_1 = m_2$ ($M \hookrightarrow N \implies \forall n \in N: |f^{-1}[n]| \le 1$)
-  \item surjektiv, wenn $f[M] = N$ ($M \twoheadrightarrow N \implies \forall n \in N: |f^{-1}[n]| \ge 1$)
-  \item bijektiv, wenn $f$ injektiv und surjektiv ist. ($M \hooktwoheadrightarrow N \implies \forall n \in N: |f^{-1}[n]| = 1$)
+  \item injektiv, wenn $\forall m_1, m_2 \in M: f(m_1) = f(m_2) \iff m_1 = m_2$ ($M \hookrightarrow N \implies \forall n \in N: |f^{-1}[n]| \le 1$)\index{Funktion!Injektiv}
+  \item surjektiv, wenn $f[M] = N$ ($M \twoheadrightarrow N \implies \forall n \in N: |f^{-1}[n]| \ge 1$)\index{Funktion!Surjektiv}
+  \item bijektiv, wenn $f$ injektiv und surjektiv ist. ($M \hooktwoheadrightarrow N \implies \forall n \in N: |f^{-1}[n]| = 1$)\index{Funktion!Bijektiv}
   \end{itemize}
 \end{definition}
 \begin{definition}
-  Sei $A \subseteq M$, dann ist $f|_A: A \to N, a \mapsto f(a)$ Restriktion.\index{Funktion!Restriktion}
+  Sei $A \subseteq M$, dann ist $f|_A: A \to N, a \mapsto f(a)$ Restriktion.\index{Funktion!Restriktion}\index[sym]{f"|"A@$f"|"_A$}
 
-  Sei $f[M] \subseteq B \subseteq N$, dann ist $f|^B: M \to B, m \mapsto f(m)$ Korrektion.\index{Funktion!Korrektion}
+  Sei $f[M] \subseteq B \subseteq N$, dann ist $f|^B: M \to B, m \mapsto f(m)$ Korrektion.\index{Funktion!Korrektion}\index[sym]{f"|"B@$f"|"^B$}
 \end{definition}
 \begin{remark}
-  Ist $M \to N$ bijektiv und $n \in N$, dann $\exists! m \in M: f(m) = n$. Man nennt $f^{-1}: N \to M, n \mapsto m$ Umkehrfunktion von $f$.\index{Funktion!Umkehrfunktion}
+  Ist $M \to N$ bijektiv und $n \in N$, dann $\exists! m \in M: f(m) = n$. Man nennt $f^{-1}: N \to M, n \mapsto m$ Umkehrfunktion von $f$.\index{Funktion!Umkehrfunktion}\index[sym]{f-1@$f^{-1}$}
 \end{remark}
 
 \begin{definition}
-  Es sei $f: M \to N, g: N \to O$, dann ist $g \circ f: M \to O, m \mapsto g(f(m))$ eine Komposition. Man sagt „$g$ nach $f$“
+  Es sei $f: M \to N, g: N \to O$, dann ist $g \circ f: M \to O, m \mapsto g(f(m))$ eine Komposition\index{Funktion!Komposition}\index[sym]{$\circ$}. Man sagt „$g$ nach $f$“
 \end{definition}
 \begin{lemma}[Assoziativität der Komposition]
   Es seien $f: M \to N, g: N \to O, h: O \to P$. $h \circ (g \circ f) = (h \circ g) \circ f$
@@ -275,7 +272,7 @@ Axiomatische Mengenlehre (grob zusammengefasst):
 \end{proof}
 
 \begin{remark}
-  $\operatorname{Id}_M: M \to M, m \mapsto m$ heißt Identität. Dann gilt für $f: M \to N$:
+  $\operatorname{Id}_M: M \to M, m \mapsto m$ heißt Identität\index{Funktion!Identität}\index[sym]{Id@$\operatorname{Id}_M$}. Dann gilt für $f: M \to N$:
   \begin{align*}
     f \circ \operatorname{Id}_M &= f \\
     \operatorname{Id}_M \circ f &= f
