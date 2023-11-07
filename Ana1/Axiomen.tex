@@ -126,3 +126,118 @@ Diese Anordnung genügt den Axiomen
     \,&\implies b > a
   \end{align*}
 \end{example}
+
+\begin{theorem}
+  \begin{align*}
+    a < b &\iff b-a > 0 \\
+    a < 0 &\iff -a > 0 \\
+    a > 0 &\iff -a < 0 \\
+    a < b &\iff -b < -a \\
+    a < b \wedge c < d &= a+c < b+d \\
+    ab > 0 &\iff (a > 0 \wedge b > 0) \vee (a < 0 \wedge b < 0) \\
+    ab < 0 &\iff (a > 0 \wedge b < 0) \vee (a < 0 \wedge b > 0) \\
+    a \ne 0 &\iff a^2 > 0 \\
+    a < b \wedge c < 0 &\iff ac > bc \\
+    a > 0 &\iff \frac{1}{a} > 0 \\
+    a^2 < b^2 \wedge a > 0 \wedge b > 0 &\implies a < b
+  \end{align*}
+\end{theorem}
+\begin{proof}[Beweis für $a < 0 \iff b-a > 0$, etc.]
+  Sei $a < b$, dann ist
+  \begin{align*}
+    a + (-a) &< b + (-a) \\
+    0 &< b - a
+  \end{align*}
+
+  Man setzt oben $b = 0$ ein. Dann ist
+  \begin{align*}
+    0 &< 0 - a \\
+    0 &< -a
+  \end{align*}
+\end{proof}
+\begin{proof}[Beweis für $a < b \wedge c < d \iff a+c < b+d$]
+  \begin{align*}
+    a < b \wedge c + d &\iff a + c < b + c \wedge b + c < b + d \\
+    \,&\iff a + c < b + d
+  \end{align*}
+\end{proof}
+\begin{proof}[Beweis für $a, b > 0 \vee a, b < 0 \implies ab > 0$]
+  \begin{align*}
+    a, b > 0 &\iff ab > 0b \\
+    a, b < 0 &\iff (-a), (-b) > 0 \\
+    \,&\implies (-a)(-b) > 0 \\
+    \,&\iff ab > 0
+  \end{align*}
+\end{proof}
+
+\section{Das Vollständigkeitsaxiom}
+\begin{axiom}[Vollständigkeitsaxiom]
+  Jede nichtleere Teilmenge $M \subseteq \mathbb{R}$, welche nach oben beschränkt ist, besitzt eine kleinste obere Schrankt, ganannt das Supremum vom $M$, geschrieben $\operatorname{sup} M$.
+\end{axiom}
+
+\begin{definition}
+  Sei $M \subseteq \mathbb{R}$, $M \ne \emptyset$
+  \begin{itemize}
+  \item $M$ heißt nach oben beschränkt, falls $k \in \mathbb{R}$ existiert mit $\forall x \in M: x \le k$. Jede solche Zahl heißt obere Schranke von $M$.
+  \item $M$ heißt nach unten beschränkt, falls $k \in \mathbb{R}$ existiert mit $\forall x \in M: x \ge k$. Jede solche Zahl heißt untere Schranke von $M$.
+  \item $M$ heißt beschränkt, falls $k \ge 0$ existiert mit $\forall x \in M: -k \le x \le k$.
+  \end{itemize}
+\end{definition}
+\begin{definition}
+  Eine Zahl $k \in \mathbb{R}$ heißt kleinste obere (bzw. größte untere) Schranke, falls
+  \begin{itemize}
+  \item Es eine obere (bzw. untere) Schranke ist und
+  \item Es gibt keine kleinere obere (bzw. größere untere) Schranke für $M$
+  \end{itemize}
+\end{definition}
+\begin{remark}
+  $x \le k \iff -k \ge -x$. D.h.,
+  \begin{itemize}
+  \item $k$ ist eine obere Schranke für $M$ $\iff$ $-k$ ist eine untere Schranke für $-M = \left\{ x \middle| x \in M \right\}$.
+  \item $k$ ist die kleinste obere Schranke für $M$ $\iff$ $-k$ ist die größte untere Schranke für $-M$.
+  \end{itemize}
+
+  Jede nichtleere nach unten beschränkte Menge $M \subseteq \mathbb{R}$ hat eine größte untere Schranke, genannt Infimum von $M$, geschrieben $\operatorname{inf} M$
+\end{remark}
+\begin{example}
+  Es seien $M = [0, 1] = \left\{ x \middle| 0 \le x \le 1 \right\}, A = (0, 1) = \left\{ x \middle| 0 < x < 1 \right\}$.
+  \begin{align*}
+    \operatorname{sup} M &= 1 & \operatorname{inf} M &= 0 \\
+    \operatorname{sup} A &= 1 & \operatorname{inf} A &= 0
+  \end{align*}
+\end{example}
+\begin{notation}
+  Sei $M \subseteq R, M \ne \emptyset$. Man schreibt
+  \begin{itemize}
+  \item $\operatorname{sup} M < \infty$ bzw. $\operatorname{inf} M > -\infty$, falls $M$ nach oben (bzw. unten) beschränkt ist
+  \item $\operatorname{sup} M = \infty$ bzw. $\operatorname{inf} M = \infty$, falls $M$ nicht nach oben (bzw. unten) beschränkt ist
+  \end{itemize}
+\end{notation}
+\begin{theorem}
+  Sei $M \subseteq \mathbb{R}, M \ne \emptyset$.
+  \begin{itemize}
+  \item Ist $\operatorname{sup} M < \infty$, folgt $\forall \epsilon > 0\: \exists x \in M: (\operatorname{sup} M)-\varepsilon < x$.
+  \item Ist $\operatorname{sup} M = \infty$, so gilt $\forall k \ge 0\: \exists x \in M: x \ge k$
+  \end{itemize}
+\end{theorem}
+\begin{theorem}
+  Sei $M \subseteq \mathbb{R}, M \ne \emptyset$.
+  \begin{itemize}
+  \item Ist $\operatorname{inf} M > -\infty$, folgt $\forall \varepsilon > 0\: \exists x \in M: x < (\operatorname{inf} M)+\varepsilon$
+  \item Ist $\operatorname{inf} M = -\infty$, folgt $\forall k \ge 0\: \exists x \in M: x < -k$
+  \end{itemize}
+\end{theorem}
+\begin{theorem}
+  Sei $M \subseteq \mathbb{R}, M \ne \emptyset$.
+  \begin{itemize}
+  \item $m \in M$ heißt größtes Element (Maximum) von $M$, geschrieben $\operatorname{max} M$, wenn $\forall x \in M: x \le m$
+  \item $m \in M$ heißt kleinstes Element (Minimum) von $M$, geschrieben $\operatorname{min} M$, wenn $\forall x \in M: x \ge m$
+  \end{itemize}
+\end{theorem}
+\begin{example}
+  Sei $M = \left[0, 1\right)$. Dann ist $\operatorname{sup} M = 1, \operatorname{inf} M = 0$
+  \begin{itemize}
+  \item $M$ hat kein Maximum.
+  \item $M$ hat ein Minimum.
+  \end{itemize}
+\end{example}

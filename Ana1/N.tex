@@ -1,0 +1,29 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Die natürliche Zahlen $\mathbb{N}$}
+\begin{definition}
+  Eine Teilmenge $A \in \mathbb{R}$ heißt induktiv, falls
+  \begin{itemize}
+  \item $1 \in A$
+  \item $x \in A \implies x+1 \in A$
+  \end{itemize}
+\end{definition}
+\begin{observation}
+  Sei $J$ eine Indexmenge und $A_j, j \in J$ induktive Teilmengen von $\mathbb{R}$. Dann ist $A := \bigcap_{j \in J} A_j$ ist induktiv.
+  \begin{proof}
+    \begin{align*}
+      x \in A &\iff \forall j \in J: x \in A_j \\
+      \,&\implies \forall j \in J: x+1 \in A_j \\
+      \,&\implies x+1 \in A
+    \end{align*}
+  \end{proof}
+\end{observation}
+\begin{definition}
+  Sei $\mathfrak{J} := \left\{ A \subseteq R \middle| A \text{ ist induktiv} \right\}$. Man definiert $\mathbb{N}$ als die kleinster induktive Teilmenge von $\mathbb{R}$, d.h. $\mathbb{N} := \bigcap_{A \in \mathfrak{J}} A$
+\end{definition}
+
+\begin{theorem}[Induktionsprinzip]
+  Ist $M \subseteq \mathbb{N}$ induktiv, dann ist $M = \mathbb{N}$.
+\end{theorem}
+\begin{proof}
+  Nach Vorraussetzung ist $M \subseteq \mathbb{N}$. Aus Definition von $\mathbb{N}$ ist $\mathbb{N} \subseteq M \implies M = \mathbb{N}$.
+\end{proof}
