@@ -1,0 +1,128 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Die Axiome der reellen Zahlen}
+Axiome der reelle Zahlen: Es gibt eine Menge $\mathbb{R}$, genannt „reelle Zahlen“, die 3 Gruppen von Axiomen erfüllt:
+\begin{itemize}
+\item algebraische Axiome
+\item Anordnungsaxiome
+\item Vollständigkeitsaxiom (!)
+\end{itemize}
+
+\section{Algebraische Axiome}
+In $\mathbb{R}$ gibt es 2 Operationen:
+\begin{itemize}
+\item Addition: $a+b \in \mathbb{R}$
+\item Multiplikation: $a \cdot b \in \mathbb{R}$
+\end{itemize}
+
+Es gilt folgende Axiome:
+\begin{enumerate}
+\item Assoziativität der Addition: $(a + b) + c = a + (b + c)$
+\item Kommutativität der Addition: $a + b = b + a$
+\item Neutrales Element der Addition: Es gibt genau eine Zahl, genannt „null“ und geschrieben 0, mit $\forall a \in \mathbb{R}: a + 0 = a$
+\item Inverse der Addition: $\forall a \in \mathbb{R}\: \exists! b \in R: a + b = 0$, geschrieben $b = -a$
+\item Assoziativität der Multiplikation: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
+\item Kommutativität der Multiplikation: $a \cdot b = b \cdot a$
+\item Neutrales Element der Multiplikation: Es gibt genau eine Zahl, genannt „eins“ und geschrieben 1, die von null verschieden ist, mit $\forall a \in \mathbb{R}, a \cdot 1 = a$
+\item Inverse der Multiplikation: $\forall a \in \mathbb{R}\: \exists! b \in R: a \cdot b = 1$, geschrieben $b = a^{-1}$
+\item Distributivgesetz: $a \cdot (b + c) = a \cdot b + a \cdot c$
+\end{enumerate}
+
+Jede Menge $\mathbb{K}$, die die o.g. Axiome erfüllt, heißt Körper.
+
+\begin{definition}
+  Notation:
+  \begin{itemize}
+  \item Negation: $a - b := a + (-b)$
+  \item Quotient: $\frac{a}{b} := a \cdot b^{-1}$
+  \end{itemize}
+\end{definition}
+
+\begin{theorem}
+  Es gilt:
+  \begin{itemize}
+  \item $-(-a) = a$
+  \item $(-a)+(-b) = -(a+b)$
+  \item $(a^{-1})^{-1} = a$
+  \item $a^{-1} b^{-1} = (ab)^{-1}$
+  \item $a \cdot 0 = 0$
+  \item $a(-b) = -(ab)$
+  \item $a(b-c) = ab-ac$
+  \item $ab = 0 \implies a = 0 \vee b = 0$
+  \end{itemize}
+\end{theorem}
+\begin{proof}[zu $a \cdot 0 = 0$]
+  \begin{align*}
+    a \cdot 0 + a \cdot 0 &= a \cdot (0+0) \\
+    \,&= a \cdot 0 \\
+    \implies (a \cdot 0 + a \cdot 0) + (-a \cdot 0) &= a \cdot 0 + (-a \cdot 0) \\
+    \,&= 0 \\
+    (a \cdot 0 + a \cdot 0) + (-a \cdot 0) &= a \cdot 0 + 0 \\
+    \,&= a \cdot 0 \\
+    \implies a \cdot 0 &= 0
+  \end{align*}
+\end{proof}
+\begin{proof}[zu $ab = 0 \implies a = 0 \vee b = 0$]
+  \begin{align*}
+    a \ne 0 \implies b &= 1 \cdot b \\
+    \,&= (a^{-1}a)b \\
+    \,&= a^{-1}(ab) \\
+    \,&= a \cdot 0 \\
+    \,&= 0
+  \end{align*}
+\end{proof}
+
+\begin{theorem}
+  \begin{align*}
+    \frac{a}{b} + \frac{c}{d} &= \frac{ad+cb}{bd} \\
+    \frac{a}{b} \cdot \frac{c}{d} &= \frac{ac}{bd} \\
+    \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{ad}{bc}
+  \end{align*}
+\end{theorem}
+
+\begin{proof}[Zur Eindeutigkeit von 0 und 1]
+  Es seien 0 und $0'$ neutrale Elemente der Addition. Dann ist $0 = 0 + 0' = 0'$
+\end{proof}
+\begin{proof}[Zur Eindeutigkeit der Inverse]
+  Es seien $a + b = 0, a + b' = 0$. Dann ist
+  \begin{align*}
+    b' &= b' + 0 \\
+    \,&= b' + (a + b) \\
+    \,&= (a + b') + b \\
+    \,&= b
+  \end{align*}
+\end{proof}
+
+\section{Die Anordnungsaxiome}
+\[ \forall a, b \in \mathbb{R}: a = b \vee a \ne b \]
+
+Ist $a \ne b$, so besteht eine Anordnung $<$, sodass genau eine der Relationen $a < b$ oder $b < a$ gilt.
+
+D.h., für alle $a, b \in \mathbb{R}$ gilt genau eine der Aussagen $a < b, a = b, a > b$.
+
+Diese Anordnung genügt den Axiomen
+\begin{itemize}
+\item Transitivität: $a < b \wedge b < c \implies a < c$
+\item $a < b, c = \mathbb{R} \implies a + c < b + c$
+\item $a < b, c > 0 \implies ac < bc$
+\end{itemize}
+
+\begin{definition}
+  Notation:
+  \begin{itemize}
+  \item $a < b$: $a$ ist echt kleiner als $b$
+  \item $a \le b \iff a < b \vee a = b$
+  \item $a > b$: $a$ ist größer als $b$
+  \item $a \ge b \iff a > b \vee a = b$
+  \item $a$ ist positiv, wenn $a > 0$; $a$ ist negativ, wenn $a < 0$
+  \item $a$ ist nicht negativ, wenn $a \ge 0$; $a$ ist nicht positiv, wenn $a \le 0$
+  \end{itemize}
+\end{definition}
+
+\begin{example}[Beweis für $a < b \iff b - a > 0$]
+  \begin{align*}
+    a < b &\implies a-a < b-a \\
+    \,&\implies 0 < b-a \\
+    b-a > 0 &\implies b-a+a > a \\
+    \,&\implies b > a
+  \end{align*}
+\end{example}

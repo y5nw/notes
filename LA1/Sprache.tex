@@ -249,7 +249,7 @@ Axiomatische Mengenlehre (grob zusammengefasst):
 \begin{definition}
   Sei $A \subseteq M$, dann ist $f|_A: A \to N, a \mapsto f(a)$ Restriktion.\index{Funktion!Restriktion}\index[sym]{f"|"A@$f"|"_A$}
 
-  Sei $f[M] \subseteq B \subseteq N$, dann ist $f|^B: M \to B, m \mapsto f(m)$ Korrektion.\index{Funktion!Korrektion}\index[sym]{f"|"B@$f"|"^B$}
+  Sei $f[M] \subseteq B \subseteq N$, dann ist $f|^B: M \to B, m \mapsto f(m)$ Korrestriktion.\index{Funktion!Korestriktion}\index[sym]{f"|"B@$f"|"^B$}
 \end{definition}
 \begin{remark}
   Ist $M \to N$ bijektiv und $n \in N$, dann $\exists! m \in M: f(m) = n$. Man nennt $f^{-1}: N \to M, n \mapsto m$ Umkehrfunktion von $f$.\index{Funktion!Umkehrfunktion}\index[sym]{f-1@$f^{-1}$}
@@ -302,4 +302,119 @@ Axiomatische Mengenlehre (grob zusammengefasst):
     \, &= \operatorname{Id}_M(m_2) = m_2 \\
     \implies m_1 &= m_2
   \end{align*}
+
+  $f: M \to N$
+
+  Man nimmt $f(m) = n$ und $h(n) = m$. Dann ist
+  \begin{align*}
+    (f \circ h)(n) = \operatorname(Id)_N(n)
+  \end{align*}
 \end{proof}
+\begin{remark}
+  Seien $g$ („Linksinverse“) und $h$ („Rechtsinverse“) wie oben, dann ist:
+  \begin{align*}
+    \underbrace{(g \circ f)}_{= \operatorname{Id}_M} \circ h &= g \circ \underbrace{(f \circ h)}_{= \operatorname{Id}_N} \\
+    \implies h &= g = f^{-1}
+  \end{align*}
+\end{remark}
+
+\begin{definition}
+  Es sei $I$ eine Menge und alle $X_i$ für $i \in I$ eine Menge.
+  \[ \prod_{i \in I} X_i = \left\{ f: I \to \bigcup \left\{ X_i \middle| i \in I \right\} \middle| f(i) \in X \right\} \]
+  heißt Produkt von $X_i$.
+\end{definition}
+
+\section{Partitionen}
+\begin{definition}
+  Es seien $M, N, \dots$ Mengen. $\mathscr{P} \subseteq \mathscr{P}(M)$
+
+  $\mathscr{P}$ heißt paarweise disjunkt, wenn $\forall A, B \in P: A \cap B = \emptyset$. In dem Fall schreibt man $A \sqcup B$ statt $A \cup B$.
+
+  $\mathscr{P}$ heißt Partition, wenn $\emptyset \not\in \mathscr{P}$ und $\bigsqcup \mathscr{P} = M$
+\end{definition}
+\begin{theorem}
+  $\forall x \in M\: \exists! A \in \mathscr{P}: x \in A$
+\end{theorem}
+\begin{proof}
+  Es ist $M = \bigsqcup P$. Man nimmt an, $x \in A \wedge x \in B$. Dann ist
+  $A \cap B \ne \emptyset \implies$ Widerspruch.
+\end{proof}
+\begin{remark}
+  Man schreibt $A = [x]_{\mathscr{P}}$
+\end{remark}
+
+\begin{definition}
+  $\pi: M \to \mathscr{P}, x \mapsto [x]_{\mathscr{P}}$ heißt kanonische Projektion.
+
+  Für $x, y \in M$ definiert man die $\mathscr{P}$-Äquivalenz $R_{\mathscr{P}}$ mit $x R_{\mathscr{P}} y :\iff [x]_{\mathscr{P}} = [y]_{\mathscr{P}}$
+\end{definition}
+\begin{remark}
+  Es ist $p: M \twoheadrightarrow N$. Dann ist $\mathscr{P}_p = \left\{ p^{-1}[n] \middle| n \in N \right\}$ eine Faserpartition von $p$.
+
+  Es gilt: $x R_p y \iff p(x) = p(y)$
+
+  Ist $\pi: M \to \mathscr{P}$ die Partition, dann ist $\pi^{-1}[A] = A$, also $\mathscr{P} = \mathscr{P}_{\pi}$
+\end{remark}
+\begin{remark}
+  $\pi: M \to \mathscr{P}$ ist surjektiv, dann ist $A \ne \emptyset$, also $\exists!x: x \in A$ und $\pi(x) = A$.
+
+  Es gibt also eine Rechtsinverse $\sigma: \mathscr{P} \to M$ mit $\forall A \in \mathscr{P}: \sigma(A) = A$. Ist $R = \operatorname{Bild}(\sigma)$, dann ist $\forall A \in \mathscr{P}: R \cap A = \left\{ \sigma(A) \right\} \implies |R \cap A| = 1$
+\end{remark}
+\begin{remark}
+  Sei $\mathscr{P}$ eine Partition und $R = R_{\mathscr{P}}$ die zugehörige Äquivalenzrelation, dann legt $R$ die Partition eindeutig fest:
+  \begin{itemize}
+  \item $\forall x \in M: [x]_{\mathscr{P}} = \left\{ y \middle| x R y \right\}$
+  \item $\mathscr{P} = \left\{ [x]_{\mathscr{P}} \middle| x \in M \right\}$
+  \end{itemize}
+\end{remark}
+\begin{proof}
+  \begin{align*}
+    y &\in [x]_{\mathscr{P}} \\
+    \implies y &\in [x]_{\mathscr{P}} \cap [y]_{\mathscr{P}} \\
+    \implies [x]_{\mathscr{P}} \cap [y]_{\mathscr{P}} &= \emptyset \\
+    \implies [x]_{\mathscr{P}} &= [y]_{\mathscr{P}} \\
+    \implies x &R y \\
+    x &R y \\
+    \implies [x]_{\mathscr{P}} &= y_{\mathscr{P}} \\
+    \implies y &\in [x]_{\mathscr{P}}
+  \end{align*}
+  $\pi: M \to \mathscr{P}, x \mapsto [x]_{\mathscr{P}}$ ist surjektiv.
+\end{proof}
+\begin{remark}
+  Notation:
+
+  Es sei $R$ eine Relation auf $M$, dann ist $\forall x \in M: [x]_R = \left\{ y \middle| x R y \right\}$. Man schreibt
+
+  $M / R = \left\{ [x]_R \middle| x \in M \right\}$ „$M$ modulo $B$“.
+
+  Falls $R = R_{\mathscr{P}}$, dann ist $M/R = \mathscr{P}$.
+\end{remark}
+\begin{theorem}
+  $M/R = \mathscr{P}$ genau dann, wenn $\forall x, y, z \in M$
+  \begin{itemize}
+  \item Reflexiv: $x R x$
+  \item Symmetrisch: $x R y \implies y R x$
+  \item Transitiv: $x R y \wedge y R z \implies x R z$
+  \end{itemize}
+  In dem Fall ist $R = R_{M/R}$
+\end{theorem}
+\begin{proof}
+  $\Rightarrow$: Ist $M/R$ eine Partition, dann ist $\pi: M \to M/R, x \mapsto [x]_R$. Dann gilt $x R y \iff \pi(x) = \pi(y)$. Dann sind die o.g. Eigenschaften durch die Gleichheiterfüllt.
+
+  $\Leftarrow$: Aus Reflexivität folge $x \in [x]_R$. Dann ist $\emptyset \not\in \mathscr{P}$ und $\bigcup \mathscr{P} \in M$.
+
+  Angenommen, $z \in [x]_{\mathscr{P}} \cap [y]_{\mathscr{P}}$. Dann ist
+  \begin{align*}
+    (x R z) \wedge (y R z) &\implies (x R z) \wedge (z R y) \\
+    \, &\implies x R y \\
+    \, &\implies y \in [x]_{R} \\
+    w \in [y]_R &\implies (y R w) \wedge (x R y) \\
+    \, &\implies x R w \\
+    \, &\implies w \in [x]_{\mathscr{P}}
+  \end{align*}
+  Also: $[y]_R \subseteq [x]_R, [x]_R \subseteq [y]_{R}$
+\end{proof}
+
+\begin{theorem}
+  Jede Funktion $f: M \to N$ lässt sich kanonisch in eine surjektive, bijektive und injektive Abbildung zerlegen.
+\end{theorem}

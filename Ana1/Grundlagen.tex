@@ -355,3 +355,64 @@ Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es 
 
   Sei $R$ ein Äquivalenzrelation auf $A$ und $F:= \left\{ [a]_R \middle| a \in A \right\}$ ist eine Zerlegung von $A$. Man schreibt $F = A / R$ oder $A /_{\sim} R$\index[sym]{$/$}\index[sym]{$/_{\sim}$}
 \end{remark}
+
+% = TODO: complement notes from Tuesday
+
+\section{Funktionen}
+\begin{definition}
+  Eine Relation $R = (A, B, G)$ heißt eine Funktion (oder Abbildung), wenn $\forall a \in A\: \exists! b = B: (a, b) \in G$.
+
+  Man setzt $f(a) := b$.
+
+  $A$ heißt Definitionsbereich, $B$ heißt Wertebereich (Zielmenge).
+\end{definition}
+\begin{example}
+  \begin{align*}
+    f&: \mathbb{Z} \to R, n \mapsto 3n^2+7 \\
+    g&: \mathbb{Z} \to \mathbb{Z}, n \mapsto 3n^2+7 \\
+    h&: \left[0, \infty\right\} \to \mathbb{R}, n \mapsto x^2+3x+4 \\
+    j&: \mathbb{R} \to \mathbb{R}, n \mapsto x^2+3x+4
+  \end{align*}
+\end{example}
+
+\begin{definition}
+  Ist $f: A \to B$ eine Funktion, dann ist
+  \begin{itemize}
+  \item $M \subseteq A: f(M) := \left\{ b \in B \middle| \exists x \in M: b = f(x) \right\}$ das Bild von $M$.
+  \item $N \subseteq B: f^{-1}(N) := \left\{ a \in A \middle| f(a) \in N \right\}$ das Urbild von $N$
+  \end{itemize}
+
+  Ist $f: A \to B$ eine Funktion, dann gibt es ein $f^{-1}: \mathscr{P}(B) \to \mathscr{P}(A)$
+
+  Ist $f: A \to B$ und $M \subseteq A$, dann ist $f|_M: M \to B$ eine Einschränkung von $f$ auf $M$.
+\end{definition}
+
+\begin{definition}
+  Es sei $f: A \to B$, dann ist f
+  \begin{itemize}
+  \item injektiv, wenn $\forall a_1, a_2 \in A: f(a_1) = f(a_2) \implies a_1 = a_2$
+  \item surjektiv, wenn $f(A) = B$
+  \item bijektiv, wenn $f$ injektiv und surjektiv ist.
+  \end{itemize}
+
+  Wenn $f$ injektiv ist: dann ist man $\tilde{f}: A \to f(A), a \mapsto f(a)$ surjektiv.
+
+  Wenn $f$ bijektiv ist, dann $\exists f^{-1}: B \to A, b \mapsto a$. Man schreibt $f^{-1}(b) := a$
+\end{definition}
+
+\section{Geordnete Mengen}
+\begin{definition}
+  Sei $A$ ein Menge und $R$ eine Relation auf $A$. Falls
+  \begin{itemize}
+  \item Reflexivität: $\forall a \in A: a \prec a$
+  \item Transitivität: $\forall a_1, a_2, a_3 \in A: a_1 \prec a_2 \wedge a_2 \prec a_3 \implies a_1 \prec a_2$
+  \item $\forall a_1, a_2 \in A: a_1 \prec a_2 \wedge a_2 \prec a_1 \implies a_1 = a_2$
+  \end{itemize}
+
+  Man schreibt $a_1 \prec a_2$ für $a_1 R a_2$. Dann heißt $(A, \prec)$ eine teilweise geordnete Menge.
+
+  $T \subseteq A$ heißt geordnet, wenn es eine Kette gibt mit $a_1, a_2 \in T \implies a_1 \prec a_2 \vee a_2 \prec a_1$.
+\end{definition}
+\begin{example}
+  $\mathscr{P}(A): M \subseteq N \iff M \prec N$
+\end{example}

@@ -1,5 +1,7 @@
 % -*- TeX-master: "../main" -*-
-\chapter{Mengen, Alphabete, Abbildungen}
+\chapter{Mengen und Abbildungen}
+
+\section{Mengen}
 
 Eine Menge\index{Menge} ist ein „Behälter“ von „Objekten“ (Elementen).
 
@@ -23,3 +25,95 @@ Eine Menge\index{Menge} ist ein „Behälter“ von „Objekten“ (Elementen).
     A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) & A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) \tag{Distributivgesetz\index{Menge!Distributivgesetz}}
   \end{align*}
 \end{lemma}
+
+\begin{notation}[Allquantor]
+  $\forall$: „für alle“
+\end{notation}
+\begin{notation}[Existenzquantor]
+  $\exists$: „es gibt“
+\end{notation}
+
+\begin{definition}[Kartesisches Produkt]
+  $A \times B := \left\{ (a, b) | a \in A, b \in B \right\}$
+\end{definition}
+\begin{remark}
+  $M^2 = M \times M, M^3 = M \times M \times M, \dots$
+\end{remark}
+
+\section{Relationen und Abbildungen}
+
+\begin{definition}[Relation]
+  $R \subseteq A \times B$ heißt binäre Relation von $A$ in $B$.
+\end{definition}
+\begin{notation}
+  Für $(a, b) \in R$ sagt man: „$a$ steht in Relation $R$ zu $b$“ und schreibt $a R b$ (z.B. für $\le \subseteq \mathbb{N} \times \mathbb{N}$: $23 \le 42$ statt $(23,42) \in \le$).
+\end{notation}
+
+\begin{definition}
+  $R$ heißt
+  \begin{itemize}
+  \item linkstotal, wenn $\forall a \in A\: \exists b \in B: (a, b) \in R$
+  \item linkseindeutig, wenn $\forall (a_1, b_1), (a_2, b_2) \in R: a_1 \ne a_2 \implies b_1 \ne b_2$
+  \item rechtstotal, wenn $\forall b \in B\: \exists a \in A: (a, b) \in R$
+  \item rechtseindeutig, wenn $\forall a \in A\: \forall b_1, b_2 \in B: (a, b_1) \in R \wedge (a, b_2) \in R \implies b_1 = b_2$
+  \end{itemize}
+\end{definition}
+\begin{definition}[Funktion]
+  Relationen, die linkstotal und rechtseindeutig sind, heißen (totale) Funktionen (oder Abbildungen). $A$ heißt der Definitionsbereich, $B$ heißt der Zielbereich.
+
+  Man schreibt: $R(a) = b$. $b$ heißt Funktionswert an der Stelle $a$.
+
+  Partielle Funktionen sind rechtseindeutig aber nicht linkstotal.
+
+  Eine linkseindeutige Funktion heißt injektiv. Eine rechtstotale Funktion heißt surjektiv. Eine injektiv und surjektive Funktion heißt bijektiv.
+\end{definition}
+
+\begin{notation}[Angabe vom Definitions- und Zielbereich]
+  $f: A \to B$
+\end{notation}
+\begin{notation}[Spezifikation und Funktionswerten]
+  $f: a \mapsto b$
+\end{notation}
+\begin{remark}
+  Zu einer Abbildung (und auch einer Relation) gehören
+  \begin{itemize}
+  \item der Definitionsbereich,
+  \item der Zielbereich und
+  \item die Abbildungsvorschrift
+  \end{itemize}
+\end{remark}
+
+\section{Mehr zu Mengen}
+
+\begin{notation}[Mengen von Funktionen]
+  $B^A := \left\{ f \middle| f \text{ ist eine Funktion mit } f: A \to B \right\}$
+\end{notation}
+\begin{remark}
+  Für endliche Mengen gilt: $|B^A| = |B|^{|A|}$
+\end{remark}
+
+\begin{remark}[Konstruktion natürlicher Zahlen durch Mengen]
+  \begin{align*}
+    \emptyset &= \left\{  \right\} \\
+    \not{1} &:= \left\{ \emptyset \right\} \\
+    \not2 &:= \left\{ \emptyset, \not1 \right\} \\
+    \not3 &:= \left\{ \emptyset, \not1, \not2 \right\} \\
+  \end{align*}
+  usw.
+\end{remark}
+
+\begin{definition}[Potenzmenge]
+  $\mathscr{P}(M) = \left\{ A \middle| A \subseteq M \right\}$
+\end{definition}
+\begin{notation}
+  Für die Potenzmenge $\mathscr{P}(M)$ schreibt man auch $2^M$
+\end{notation}
+\begin{remark}
+  $A \in 2^M \iff A \subseteq M$
+\end{remark}
+\begin{notation}
+  \begin{align*}
+    \bigcup_{i \in I} M_i &= \left\{ x \middle| \exists i \in I: x \in M_i \right\} \\
+    \bigcap_{i \in I} M_i &= \left\{ x \middle| \forall i \in I: x \in M_i \right\}
+  \end{align*}
+\end{notation}
