@@ -1,0 +1,135 @@
+% -*- TeX-master: "../main" -*-
+
+\chapter{Lineares Gleichungssystem}
+
+\begin{example}
+  \begin{align*}
+    ax_1 + bx_2 &= c \\
+    dx_1 + ex_2 &= f \\
+    &\iff \operatorname{LGS}(x_1, x_2)
+  \end{align*}
+  D.h. Es ist eine Aussageform über $\mathbb{R} \times \mathbb{R}$
+
+  Lösungen: $\mathscr{L} = \left\{ (x_1, x_2) \middle| \operatorname{LGS}(x_1, x_2) \right\}$
+\end{example}
+
+\begin{observation}[Geometrie]
+  Es seien $x_1, x_2 \in \mathbb{R}$. Man definiert $x =
+  \begin{pmatrix}
+    x_1\\x_2
+  \end{pmatrix}
+  : \mathbb{E}^2 \to \mathbb{E}^2$
+  . Diese abbildung heißt Vektor.
+\end{observation}
+
+\begin{definition}[Vektoraddition]
+  $
+  \begin{pmatrix}
+    x_1\\x_2
+  \end{pmatrix}
+  \circ
+  \begin{pmatrix}
+    y_1\\y_2
+  \end{pmatrix}
+  :=
+  \begin{pmatrix}
+    x_1+y_1\\x_2+y_2
+  \end{pmatrix}
+  $
+\end{definition}
+\begin{definition}[Skalarmultiplikation]
+  Sei $\lambda \in \mathbb{R}$.
+  $\lambda
+  \begin{pmatrix}
+    x_1\\x_2
+  \end{pmatrix}
+  :=
+  \begin{pmatrix}
+    \lambda x_1 \\ \lambda x_2
+  \end{pmatrix}
+  $
+\end{definition}
+\begin{remark}
+  Ist $O \in \mathbb{E}^2$ ein „Ursprung“, dann ist $I_0: \mathbb{R}^2 \to \mathbb{E}^2, v \mapsto v(0)$.
+
+  Nach Wahl von $O$: $\mathbb{R}^2 \leftrightarrow \mathbb{E}^2$
+\end{remark}
+\begin{remark}
+  $\mathbf{0} =
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+  $ heißt Nullvektor.
+\end{remark}
+
+\begin{proposition}[Lösung eines LGS]
+  $\Phi: \mathbb{R}^2 \to \mathbb{R}^2,
+  \begin{pmatrix}
+    x_1\\x_2
+  \end{pmatrix}
+  \mapsto
+  \begin{pmatrix}
+    ax_1 + bx_2\\ cx_1+dx_2
+  \end{pmatrix}
+  \implies \mathscr{L} = \Phi \left[
+    \begin{pmatrix}
+      e\\f
+    \end{pmatrix}
+  \right]
+  $
+
+  $\Phi$ hat folgende Eigenschaften:
+  \begin{itemize}
+  \item $\forall \lambda \in \mathbb{R}, x \in \mathbb{R}^2: \Phi(\lambda x) = \lambda \Phi(x)$
+  \item $\forall x, y \in \mathbb{R}^2: \Phi(x + y) = \Phi(x) + \Phi(y)$
+  \end{itemize}
+
+  D.h. $\Phi$ ist linear.
+\end{proposition}
+\begin{remark}
+  $\Phi \text{ ist linear} \implies \Phi(\lambda x + \mu y) = \lambda \Phi(x) + \mu \Phi (y), \lambda, \mu \in \mathbb{R}, x, y \in \mathbb{R}^2$
+\end{remark}
+\begin{notation}
+  $Q:=
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix}
+  \in \mathbb{R}^{2 \times 2}$ ist eine Matrix.
+
+  Zu jeder Matrix $Q$ gibt es eine Abbildung $\Phi_Q: \mathbb{R}^2 \to \mathbb{R}^2,
+  x \mapsto
+  \begin{pmatrix}
+    ax_1 + bx_2 \\ cx_1+ dx_2
+  \end{pmatrix}
+  = Qx
+  $
+\end{notation}
+\begin{theorem}
+  Die Abbildung $\iota: \mathbb{R}^{2 \times 2} \to \operatorname{Lin}(\mathbb{R}^2, \mathbb{R}^2), Q \mapsto \Phi_Q$ ist bijektiv.
+\end{theorem}
+\begin{remark}
+  $Q$ heißt darstellende Matrix von $\Phi$
+\end{remark}
+
+\begin{definition}
+  $\operatorname{Karn}(\Phi) = \Phi[\mathbf{0}]$
+
+  Ein LGS heißt homogen, falls $e = f = 0$. Seine Lösung ist dann $\operatorname{Kern}(\Phi)$
+\end{definition}
+\begin{proposition}
+  Sei $W = \operatorname{Kern}(\Phi)$
+  \begin{itemize}
+  \item $\mathbf{0} \in W$, insbesondere ist $W \ne \emptyset$
+  \item $\forall x, y \in W: x+y \in W$
+  \item $\forall x \in W, \lambda \in \mathbb{R}: \lambda x \in W$
+  \end{itemize}
+  $W$ heißt Untervektorraum.
+\end{proposition}
+\begin{theorem}
+  Es gibt keine weitere Untervektorräume als
+  \begin{itemize}
+  \item $\left\{ \mathbf{0} \right\}$
+  \item Unsprungsgeraden: $\left\{ \lambda x \middle| \lambda \in \mathbb{R}, x \in \mathbb{R}^2 \right\}$
+  \item $\mathbb{R}^2$
+  \end{itemize}
+\end{theorem}

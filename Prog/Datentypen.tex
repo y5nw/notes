@@ -1,0 +1,54 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Datentypen}
+
+\section{Elementare Datentypen und Operationen}
+\begin{definition}
+  Elementare Datentypen:
+  \begin{description}
+  \item[\texttt{boolean}] Wahrheitswerte: \texttt{true}, \texttt{false}
+  \item[\texttt{char}] 16-Bit-Unicode-Zeichen
+  \item[\texttt{byte}] 8-Bit-Ganzzahl
+  \item[\texttt{short}] 16-Bit-Ganzzahl
+  \item[\texttt{int}] 32-Bit-Ganzzahl
+  \item[\texttt{long}] 64-Bit-Ganzzahl (beachte: \texttt{12L} statt \texttt{12})
+  \item[\texttt{float}] 32-Bit-Gleitpunktzahl (beachte: \texttt{9.81F} statt \texttt{9.8})
+  \item[\texttt{double}] 64-Bit-Gleitpunktzahl
+  \end{description}
+\end{definition}
+\begin{definition}
+  Operationen auf elementaren Datentypen:
+  \begin{enumerate}
+  \item \texttt{+x}, \texttt{-x}, \texttt{\^{}x}, \texttt{!x}
+  \item \texttt{x*y}, \texttt{x/y}, \texttt{x\%y}
+  \item \texttt{x+y}, \texttt{x-y}
+  \item \texttt{x<{}<y}, \texttt{x>{}>y}, \texttt{x>{}>{}>y}
+  \item \texttt{<}, \texttt{<=}, \texttt{>}, \texttt{>=}
+  \item \texttt{x==y}, \texttt{x!=y}
+  \item \texttt{x\&y}
+  \item \texttt{x\^{}y}
+  \item \texttt{x|y}
+  \item \texttt{x\&\&y}
+  \item \texttt{x||y}
+  \end{enumerate}
+\end{definition}
+\begin{remark}[Gleitkommazahlen]
+  Die Zahlen sind nicht gleichmäßig dicht dargestellt. Dies können zu Rundungsfehlern führen.
+\end{remark}
+
+\section{Der Datentyp \texttt{String}}
+Man verwendet \texttt{String} für Zeichenketten.
+\begin{lstlisting}[language=Java]
+String text = "Hallo";
+String address = "Am Fasanengarten 5\n76131 Karlsruhe";
+\end{lstlisting}
+\begin{remark}
+  Konkatenation von \texttt{String}s ist durch \texttt{+} möglich.
+\end{remark}
+
+\section{\texttt{enum}}
+\begin{lstlisting}[language=Java]
+enum Color {RED, GREEN, BLUE}
+\end{lstlisting}
+\begin{remark}
+  \texttt{enum}-Operationen müssen selbst definiert werden.
+\end{remark}
