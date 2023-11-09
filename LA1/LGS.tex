@@ -107,12 +107,32 @@
 \begin{theorem}
   Die Abbildung $\iota: \mathbb{R}^{2 \times 2} \to \operatorname{Lin}(\mathbb{R}^2, \mathbb{R}^2), Q \mapsto \Phi_Q$ ist bijektiv.
 \end{theorem}
+\begin{definition}[Standardbasis]
+  Es seien $e_1 :=
+  \begin{pmatrix}
+    1\\0
+  \end{pmatrix}
+  , e_2 :=
+  \begin{pmatrix}
+    0\\1
+  \end{pmatrix}
+  $. Das Paar $(e_1, e_2)$ heißt die Standardbasis von $\mathbb{R}^2$
+\end{definition}
 \begin{remark}
-  $Q$ heißt darstellende Matrix von $\Phi$
+  Es gilt: $Q_{\Phi}(e_1) =
+  \begin{pmatrix}
+    a\\c
+  \end{pmatrix}
+  , Q_{\Phi}(e_2) =
+  \begin{pmatrix}
+    b\\d
+  \end{pmatrix}
+  $.
+  $Q$ heißt also die darstellende Matrix von $\Phi$
 \end{remark}
 
 \begin{definition}
-  $\operatorname{Karn}(\Phi) = \Phi[\mathbf{0}]$
+  $\operatorname{Karn}(\Phi) = \Phi^{-1}[\mathbf{0}]$
 
   Ein LGS heißt homogen, falls $e = f = 0$. Seine Lösung ist dann $\operatorname{Kern}(\Phi)$
 \end{definition}
@@ -125,6 +145,9 @@
   \end{itemize}
   $W$ heißt Untervektorraum.
 \end{proposition}
+\begin{definition}[Ursprungsgerade]
+  Ist $x \in \mathbb{R}^2$, dann heißt $\mathbb{R}x := \left\{ \lambda x \middle| \lambda \in \mathbb{R} \right\}$ die Ursprungsgerade durch $x$.
+\end{definition}
 \begin{theorem}
   Es gibt keine weitere Untervektorräume als
   \begin{itemize}

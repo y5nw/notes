@@ -360,11 +360,11 @@ Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es 
 
 \section{Funktionen}
 \begin{definition}
-  Eine Relation $R = (A, B, G)$ heißt eine Funktion (oder Abbildung), wenn $\forall a \in A\: \exists! b = B: (a, b) \in G$.
+  Eine Relation $R = (A, B, G)$ heißt eine Funktion (oder Abbildung)\index{Funktion}, wenn $\forall a \in A\: \exists! b = B: (a, b) \in G$.
 
   Man setzt $f(a) := b$.
 
-  $A$ heißt Definitionsbereich, $B$ heißt Wertebereich (Zielmenge).
+  $A$ heißt Definitionsbereich\index{Funktion!Definitionsmenge}, $B$ heißt Wertebereich (Zielmenge)\index{Funktion!Zielmenge}.
 \end{definition}
 \begin{example}
   \begin{align*}
@@ -378,21 +378,21 @@ Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es 
 \begin{definition}
   Ist $f: A \to B$ eine Funktion, dann ist
   \begin{itemize}
-  \item $M \subseteq A: f(M) := \left\{ b \in B \middle| \exists x \in M: b = f(x) \right\}$ das Bild von $M$.
-  \item $N \subseteq B: f^{-1}(N) := \left\{ a \in A \middle| f(a) \in N \right\}$ das Urbild von $N$
+  \item $M \subseteq A: f(M) := \left\{ b \in B \middle| \exists x \in M: b = f(x) \right\}$ das Bild\index{Funktion!Bild}\index[sym]{f(M)@$f(M)$} von $M$.
+  \item $N \subseteq B: f^{-1}(N) := \left\{ a \in A \middle| f(a) \in N \right\}$ das Urbild\index{Funktion!Urbild}\index[sym]{f-1(N)@$f^{-1}(N)$} von $N$
   \end{itemize}
 
-  Ist $f: A \to B$ eine Funktion, dann gibt es ein $f^{-1}: \mathscr{P}(B) \to \mathscr{P}(A)$
+  Ist $f: A \to B$ eine Funktion, dann gibt es ein $f^{-1}: \mathscr{P}(B) \to \mathscr{P}(A)$\index[sym]{f-1@$f^{-1}$}
 
-  Ist $f: A \to B$ und $M \subseteq A$, dann ist $f|_M: M \to B$ eine Einschränkung von $f$ auf $M$.
+  Ist $f: A \to B$ und $M \subseteq A$, dann ist $f|_M: M \to B$ eine Einschränkung\index{Funktion!Restriktion} von $f$ auf $M$.
 \end{definition}
 
 \begin{definition}
-  Es sei $f: A \to B$, dann ist f
+  Es sei $f: A \to B$, dann ist $f$
   \begin{itemize}
-  \item injektiv, wenn $\forall a_1, a_2 \in A: f(a_1) = f(a_2) \implies a_1 = a_2$
-  \item surjektiv, wenn $f(A) = B$
-  \item bijektiv, wenn $f$ injektiv und surjektiv ist.
+  \item injektiv\index{Funktion!Injektiv}, wenn $\forall a_1, a_2 \in A: f(a_1) = f(a_2) \implies a_1 = a_2$
+  \item surjektiv\index{Funktion!Surjektiv}, wenn $f(A) = B$
+  \item bijektiv\index{Funktion!Bijektiv}, wenn $f$ injektiv und surjektiv ist.
   \end{itemize}
 
   Wenn $f$ injektiv ist: dann ist man $\tilde{f}: A \to f(A), a \mapsto f(a)$ surjektiv.
@@ -411,7 +411,7 @@ Ist $H(x)$ eine Aussage, die von einer Variable $x$ abhängig ist, dann gibt es 
 
   Man schreibt $a_1 \prec a_2$ für $a_1 R a_2$. Dann heißt $(A, \prec)$ eine teilweise geordnete Menge.
 
-  $T \subseteq A$ heißt geordnet, wenn es eine Kette gibt mit $a_1, a_2 \in T \implies a_1 \prec a_2 \vee a_2 \prec a_1$.
+  $T \subseteq A$ heißt geordnet\index{Menge!Geordnete Menge@(Teilweise) Geordnete Menge}, wenn es eine Kette gibt mit $a_1, a_2 \in T \implies a_1 \prec a_2 \vee a_2 \prec a_1$.
 \end{definition}
 \begin{example}
   $\mathscr{P}(A): M \subseteq N \iff M \prec N$

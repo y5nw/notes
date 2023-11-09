@@ -1,6 +1,6 @@
 % -*- TeX-master: "../main" -*-
 \chapter{Die natürliche Zahlen $\mathbb{N}$}
-\begin{definition}
+\begin{definition}\label{Ana1:N:Induktiv}
   Eine Teilmenge $A \in \mathbb{R}$ heißt induktiv, falls
   \begin{itemize}
   \item $1 \in A$
@@ -8,7 +8,7 @@
   \end{itemize}
 \end{definition}
 \begin{observation}
-  Sei $J$ eine Indexmenge und $A_j, j \in J$ induktive Teilmengen von $\mathbb{R}$. Dann ist $A := \bigcap_{j \in J} A_j$ ist induktiv.
+  Sei $J$ eine Indexmenge und $A_j, j \in J$ induktive Teilmengen von $\mathbb{R}$. Dann ist $A := \bigcap_{j \in J} A_j$ induktiv.
   \begin{proof}
     \begin{align*}
       x \in A &\iff \forall j \in J: x \in A_j \\
@@ -17,13 +17,97 @@
     \end{align*}
   \end{proof}
 \end{observation}
-\begin{definition}
-  Sei $\mathfrak{J} := \left\{ A \subseteq R \middle| A \text{ ist induktiv} \right\}$. Man definiert $\mathbb{N}$ als die kleinster induktive Teilmenge von $\mathbb{R}$, d.h. $\mathbb{N} := \bigcap_{A \in \mathfrak{J}} A$
+\begin{definition}\label{Ana1:N}
+  Sei $\mathfrak{F} := \left\{ A \subseteq R \middle| A \text{ ist induktiv} \right\}$. Man definiert $\mathbb{N}$ als die kleinster induktive Teilmenge von $\mathbb{R}$, d.h. $\mathbb{N} := \bigcap_{A \in \mathfrak{F}} A$
 \end{definition}
 
-\begin{theorem}[Induktionsprinzip]
+\begin{theorem}[Induktionsprinzip]\label{Ana1:N:Induktionsprinzip}
   Ist $M \subseteq \mathbb{N}$ induktiv, dann ist $M = \mathbb{N}$.
 \end{theorem}
 \begin{proof}
-  Nach Vorraussetzung ist $M \subseteq \mathbb{N}$. Aus Definition von $\mathbb{N}$ ist $\mathbb{N} \subseteq M \implies M = \mathbb{N}$.
+  Nach Vorraussetzung ist $M \subseteq \mathbb{N}$. Aus \ref{Ana1:N} ist $\mathbb{N} \subseteq M \implies M = \mathbb{N}$.
+\end{proof}
+\begin{theorem}[Induktionsbeweis]
+  Für jedes $n \in \mathbb{N}$ sei eine Aussage $B_n$ gegeben - derart, dass folgendes gilt:
+  \begin{description}
+  \item[Induktionsanfang] $B_1 \iff w$
+  \item[Induktionsschluss] $\forall n \in \mathbb{N}: (B_n \implies B_{n+1})$
+  \end{description}
+  Dann ist $\forall n \in \mathbb{N}: B_n$
+\end{theorem}
+\begin{remark}
+  Im Induktionsschluss heißt $B_n$ Induktionsannahme.
+\end{remark}
+\begin{proof}
+  Man definiert $M := \left\{ n \in \mathbb{N} | B_n \iff w \right\}$. Zu zeigen ist: $M = \mathbb{N}$.
+  \begin{itemize}
+  \item $(B_1 \iff w) \implies 1 \in M$
+  \item $B_n \implies B_{n+1} \implies n+1 \in M$
+  \end{itemize}
+  Nach \ref{Ana1:N:Induktiv} und \ref{Ana1:N:Induktionsprinzip} ist $M = \mathbb{N}$.
+\end{proof}
+\begin{remark}[Variante eines Induktionsbeweis]
+  $B_1$ ist wahr und $\left( \bigwedge_{k=1}^n B_k \implies B_{n+1} \right)$.
+\end{remark}
+
+\begin{theorem}[Eigenschaften von $\mathbb{N}$]
+  Es gilt:
+  \begin{itemize}
+  \item $\forall n \in \mathbb{N}: n \ge 1$
+  \item $\forall n, m \in \mathbb{N}: n+m \in \mathbb{N}$
+  \item $\forall n, m \in \mathbb{N}: n \cdot m \in \mathbb{N}$
+  \item $\forall n, m \in \mathbb{N}: \text{entweder } n = 1 \text{ oder } n-1 \in \mathbb{N}$
+  \item $\forall n, m \in \mathbb{N}: m < n \implies n - m \in \mathbb{N}$
+  \end{itemize}
+\end{theorem}
+
+\begin{corollary}
+  $\not\exists n \in \mathbb{N}: 0 < n < 1$. Ferner gilt: $\forall n \in \mathbb{N}\: \not\exists m \in \mathbb{N}: n < m < n+1$
+\end{corollary}
+
+\begin{definition}[Rationale Zahlen]
+  $\mathbb{Q} := \left\{ \frac{p}{q} \middle| p \in \mathbb{Z}, q \in \mathbb{N} \right\}$
+\end{definition}
+\begin{definition}[Irrationale Zahlen]
+  $\mathbb{R} \setminus \mathbb{Q}$
+\end{definition}
+\begin{remark}
+  Sei für $B_n$ für $n \in \mathbb{Z}$ eine Aussage, $n_0 \in \mathbb{N}$. Dann ist $(\forall n \ge n_0: B_n) \iff (B_n \wedge (B_n \wedge n \ge n_0 \implies B_{n+1}))$
+\end{remark}
+\begin{theorem}
+  $a, b \in \mathbb{Z} \implies a + b \in Z \wedge a \cdot b \in \mathbb{Z}$
+\end{theorem}
+
+\begin{theorem}[Satz von Archimedes]
+  $\forall x \in \mathbb{R}\: \exists n \in \mathbb{N}: x < n$ (D.h. $\mathbb{N}$ ist eine nach oben unbeschränkte Teilmenge von $\mathbb{R}$)
+\end{theorem}
+\begin{proof}
+  Angenommen: die Aussage ist falsch, d.h., $\exists x \in \mathbb{R}\: \forall n \in \mathbb{N}: n \le x$.
+  Nach dem Vollständigkeitsaxiom: $\exists a = \operatorname{sup} \mathbb{N}$
+
+  $a$ ist die kleinste obere Schranke: $\exists n \in \mathbb{N}: a-1 < n$
+
+  Daraus folgt aber: $a < n + 1$. Widerspruch!
+\end{proof}
+
+\begin{corollary}
+  $\forall x \in \mathbb{R}\: \exists n \in \mathbb{N}: -n < x$
+\end{corollary}
+
+\begin{theorem}[wohlordnungsprinzip für $\mathbb{N}$]
+  Jede nichtleere Menge natürlicher Zahlen hat ein kleinstes Element.
+\end{theorem}
+\begin{proof}
+  Sei $M \subseteq \mathbb{N}, M \ne \emptyset$.
+
+  $\operatorname{inf} \mathbb{N} = 1 \implies a = \operatorname{inf} M \ge 1 > \infty$. Zu zeigen: $a \in M$
+
+  Angenommen: $a \not\in M$
+  \begin{align*}
+    \,&\implies \forall m \in M: a < m \\
+    \varepsilon := 1 &\implies \exists m \in M: m < a+1 \\
+    \varepsilon := m - a &\implies \exists m' \in M: m' < a - \varepsilon = m \\
+    \,&\implies \exists m', m \in M: 0 < m - m' < 1
+  \end{align*}
+  Widerspruch, denn $m - m' \not\in \mathbb{N}$
 \end{proof}
