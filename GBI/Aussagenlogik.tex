@@ -1,0 +1,159 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Aussagenlogik}
+
+\section{Syntax aussagenlogischer Formeln}
+\begin{definition}[Alphabet aussagenlogischer Formeln]
+  $A_{AL} = \{ \textstring{(}, \textstring{)}, \mathstring{\neg}, \mathstring{\wedge}, \mathstring{\vee}, \mathstring{\to}, \mathstring{\leftrightarrow} \} \cup \textit{Var}_{AL}$
+\end{definition}
+
+\begin{definition}
+  Aussagenlogische Konnektive/Verknüpfung:
+  \begin{description}
+  \item[Negation] $\textstring{(} \mathstring{\neg} G \textstring{)}$
+  \item[Konjunktion] $\textstring{(} G \mathstring{\wedge} H \textstring{)}$
+  \item[Disjunktion] $\textstring{(} G \mathstring{\vee} H \textstring{)}$
+  \item[Implikation] $\textstring{(} G \mathstring{\to} H \textstring{)}$
+  \end{description}
+\end{definition}
+\begin{remark}[Konstruktionsabbildungen]
+  Für jede Verknüpfung gibt es eine Abbildung. Z.B.: $f_{\mathstring{\wedge}}: A_{AL}^{*} \times A_{AL}^{*} \to A_{AL}^{*}: (G, H) \to \textstring{(} G \mathstring{\wedge} H \textstring{)}$
+\end{remark}
+\begin{remark}[Menge einmaliger Verknüpfungen]
+  $\operatorname{Ver}(M) := \left\{ \textstring{(} \mathstring{\neg} G \textstring{)}, \textstring{(} G \mathstring{\wedge} H \textstring{)}, \textstring{(} G \mathstring{\vee} H \textstring{)}, \textstring{(} G \mathstring{\to} H \textstring{)} \middle| G, G \in \textit{Var}_{AL} \right\}$
+\end{remark}
+
+\begin{definition}[Aussagenlogische Variablen $\textit{Var}_{AL}$]
+  Aussagenlogische Variablen (oder: Atome) werden oft mit $\textstring{P}_i, i \in \mathbb{N}_0$ oder $\textstring{P}, \textstring{Q}, \textstring{R}, \dots$ benannt.
+\end{definition}
+
+\begin{definition}[Formale Sprache $\textit{For}_{AL}$ der Aussagenlogik]
+  \begin{align*}
+    M_0 &:= \textit{Var}_{AL} \\
+    \forall n \in \mathbb{N}_0: M_{n+1} &:= M_n \cup \operatorname{Ver}(M_n) \\
+    For_{AL} &:= \bigcup_{n \in \mathbb{N}_0} M_n
+  \end{align*}
+\end{definition}
+
+\begin{notation}
+  Abkürzungen (Der „offiziele“ Syntax bleibt gleich):
+  \begin{itemize}
+  \item Man kann die äußersten Klammern weglassen
+  \item mehrfach gleiches Konnektiv: „implizierte Linksklammerung“
+  \item Bindestärke von Konnektiven: (stärksten) \mathstring{\neg}, \mathstring{\wedge}, \mathstring{\vee}, \mathstring{\to}, \mathstring{\leftrightarrow} (schwächsten)
+  \item $\textstring{(} G \mathstring{\leftrightarrow} H \textstring{)}$ steht für $\textstring{(} \textstring{(} G \mathstring{\to} H \textstring{)} \mathstring{\wedge} \textstring{(} H \mathstring{\to} G \textstring{)} \textstring{)}$
+  \end{itemize}
+\end{notation}
+
+\section{Semantik der Aussagenlogik}
+Aussagen habe genau zwei Wahrheitswerte: „wahr“ (\consttrue) oder „falsch“ (\constfalse).
+\begin{definition}
+  $\mathbb{B} := \left\{ \consttrue, \constfalse \right\}$
+\end{definition}
+\begin{definition}[Interpretation]
+  $I: V \to \mathbb{B}, V \subseteq \textit{Var}_{AL}$
+\end{definition}
+\begin{definition}[Auswertung von Formeln]
+  \begin{align*}
+    \forall G \in V: \operatorname{val}_I(G) &:= I(G) \\
+    \operatorname{val}_I(\mathstring{\neg} G) &:=
+                                             \begin{cases}
+                                               \consttrue & I(G) = \constfalse \\
+                                               \constfalse & \text{sonst}
+                                             \end{cases} \\
+    \operatorname{val}_I(G \mathstring{\wedge} H) &:=
+                                               \begin{cases}
+                                                 \consttrue & I(G) = \consttrue \text{ und } I(H) = \consttrue \\
+                                                 \constfalse & \text{sonst}
+                                               \end{cases} \\
+    \operatorname{val}_I(G \mathstring{\vee} H) &:=
+                                               \begin{cases}
+                                                 \consttrue & I(G) = \consttrue \text{ oder } I(H) = \consttrue \\
+                                                 \constfalse & \text{sonst}
+                                               \end{cases} \\
+    \operatorname{val}_I(G \mathstring{\to} H) &:=
+                                               \begin{cases}
+                                                 \consttrue & \text{wenn } I(G) = \consttrue \text{ dann } I(H) = \consttrue \\
+                                                 \constfalse & I(G) = \consttrue \text{ und } I(H) = \constfalse
+                                               \end{cases}
+  \end{align*}
+\end{definition}
+\begin{remark}
+  Das „Oder“ ist inklusiv.
+\end{remark}
+
+\begin{definition}
+  Wenn zwei Aussagen $G$ und $H$ für alle Interpretationen den gleichen Wahrheitswerten annehmen, dann sind sie äquivalent. Man schreibt $G \equiv H$
+\end{definition}
+
+\begin{definition}[Modell]
+  Ist $\operatorname{val}_I(G) = \consttrue$, dann nennt man $I$ ein Modell von $G$.
+
+  Ist $I$ ein Modell jeder Formel $G \in \Gamma$, dann nennt man $I$ ein Modell von $\Gamma$.
+\end{definition}
+
+\begin{notation}
+  Es sei $\Gamma$ eine Menge von Formeln und $G$ eine Formel. Ist jedes Modell von $\Gamma$ auch Modell von $G$, so schreibt man $\Gamma \models G$.
+
+  Man schreibt $H \models G$ statt $\left\{ H \right\} \models G$ und $\models G$ statt $\emptyset \models G$.
+\end{notation}
+\begin{definition}
+  Ist $\models G$, dann ist $G$ für alle Interpretationen wahr. $G$ heißt eine Tautologie oder eine allgemeingültige Formel.
+\end{definition}
+\begin{lemma}
+  $G \equiv H$ gilt genau dann, wenn $G \leftrightarrow H$ Tautologie ist.
+\end{lemma}
+\begin{definition}
+  $G$ heißt erfüllbar, wenn $G$ für mindestens eine Interpretation wahr ist.
+\end{definition}
+
+\section{Beweisbarkeit}
+\begin{notation}[Logische Schlussregeln]
+  Man schreibt
+  \begin{prooftree}
+    \AxiomC{$V_1$}
+    \AxiomC{$V_2$}
+    \AxiomC{$\cdots$}
+    \AxiomC{$V_n$}
+    \QuaternaryInfC{$C$}
+  \end{prooftree}
+  $V_i$ heißen Vorraussetzungen, $C$ heißt Folgerung („conclusio“).
+
+  Eine Regel heißt korrekt, wenn $\left\{ V_1, V_2, \dots, V_n \right\} \models C$
+\end{notation}
+\begin{example}
+  \AxiomC{$A \wedge B$}
+  \UnaryInfC{$A$}
+  \DisplayProof
+\end{example}
+\begin{example}[Modus ponens]
+  \AxiomC{$A$}
+  \AxiomC{$A \to B$}
+  \BinaryInfC{$B$}
+  \DisplayProof
+\end{example}
+\begin{example}[Aussagen mit Bedingungen]
+  \AxiomC{$\Gamma_1 \models V_1$}
+  \AxiomC{$\Gamma_2 \models V_2$}
+  \AxiomC{$\cdots$}
+  \AxiomC{$\Gamma_n \models V_n$}
+  \QuaternaryInfC{$\scriptstyle \left( \bigcup_{i=1}^n \Gamma_i \right) \models C$}
+  \DisplayProof
+\end{example}
+
+\begin{example}
+  Zu zeigen: $\models (P \vee \neg P)$
+  \begin{prooftree}
+    \AxiomC{}
+    \UnaryInfC{$\neg (P \vee \neg P) \models \neg (P \vee \neg P)$}
+    \AxiomC{}
+    \UnaryInfC{$\neg (P \vee \neg P) \models \neg (P \vee \neg P)$}
+    \AxiomC{}
+    \UnaryInf$P \ \fCenter \models P$
+    \UnaryInf$P \ \fCenter \models P \vee \neg P$
+    \BinaryInf$\neg (P \vee \neg P), P \ \fCenter \models \constfalse$
+    \UnaryInf$\neg (P \vee \neg P) \ \fCenter \models \neg P$
+    \UnaryInf$\neg (P \vee \neg P) \ \fCenter \models P \vee \neg P$
+    \BinaryInfC{$\neg (P \vee \neg P) \ \fCenter \models \constfalse$}
+    \UnaryInfC{$P \vee \neg P$}
+  \end{prooftree}
+\end{example}

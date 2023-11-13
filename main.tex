@@ -7,6 +7,7 @@
 \usepackage{units}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
+\usepackage{bussproofs}
 \usepackage{listings}
 \usepackage{imakeidx}
 \usepackage{hyperref}
@@ -35,20 +36,24 @@
 \def\phantomequal{\phantom{{}={}}}
 \def\bar#1{\overline{#1}}
 \def\hooktwoheadrightarrow{\hookrightarrow\mathrel{\mspace{-13mu}}\rightarrow}
+\def\consttrue{\textsc{wahr}}
+\def\constfalse{\textsc{falsch}}
+\def\textstring#1{\texttt{\color{blue}#1}}
+\def\mathstring#1{\ensuremath{\mathtt{\color{blue}#1}}}
 
 \makeindex[intoc]
 \makeindex[name=sym,title=Index Mathematischer Symbole,intoc]
 \makeindex[name=java,title=Java-Index,intoc]
 \begin{document}
 \newtheorem{theorem}{Satz}[section]
-\newtheorem{axiom}[theorem]{Axiom}[section]
-\newtheorem{lemma}[theorem]{Lemma}[section]
-\newtheorem{corollary}[theorem]{Korollar}[section]
-\newtheorem{proposition}[theorem]{Proposition}[section]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Korollar}
+\newtheorem{proposition}[theorem]{Proposition}
 \theoremstyle{definition}
-\newtheorem{example}{Beispiel}[section]
+\newtheorem*{example}{Beispiel}
 \newtheorem*{problem}{Problem}
-\newtheorem{definition}[theorem]{Definition}[section]
+\newtheorem{definition}[theorem]{Definition}
 \newtheorem*{notation}{Schreibweise}
 \theoremstyle{remark}
 \newtheorem*{remark}{Bemerkung}
@@ -60,6 +65,7 @@
 \part{Grundbegriffe der Informatik}
 \include{GBI/Grundlagen.tex}
 \include{GBI/Woerter.tex}
+\include{GBI/Aussagenlogik.tex}
 
 \part{Programmieren}
 \include{Prog/Intro.tex}
