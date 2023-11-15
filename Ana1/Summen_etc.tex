@@ -1,0 +1,93 @@
+% -*- TeX-master: "../main" -*-
+
+\chapter{Summe, Produkte, Wurzeln}
+
+\section{Summen- und Produktzeichen}
+\begin{notation}
+  Seien $m \le n, m , n \in \mathbb{N}_0$. Für jede $k \in \mathbb{N}_0, m \le k \le n$ sei $a_k \in \mathbb{R}$. Dann setzt man \[ \sum_{k=m}^n := a_m + a_{m+1} + \cdots + a_n \] und \[ \prod_{k=m}^n := a_m \cdot a_{m+1} \cdot \cdots \cdot a_n \]
+\end{notation}
+
+\begin{definition}[Fakultät]
+  Für $n \in \mathbb{N}$ ist \[ n! = 1 \cdot 2 \cdot \cdots \cdot n, 0! = 1 \]
+\end{definition}
+
+\begin{theorem}
+  Die Anzahl aller möglichen Anordnungen einer $n$-elementigen Menge $\left\{ a_1, a_2, \dots, a_n \right\}$ ist $n!$.
+\end{theorem}
+\begin{proof}[Beweis durch Induktion]
+  IA: Für eine einelementige Menge $\left\{ a_1 \right\}$ gibt es eine mögliche Anordnung. $1! = 1$.
+
+  IS: Die Anzahl von Anordnungen einer $(n+1)$-elementigen Menge ist $(n+1)$-mal die Anzahl von Anordnungen einer $n$-elementigen Menge (nach IV: $n!$). So gibt es $(n+1) \cdot n! = (n+1)!$ mögliche Anordnungen.
+\end{proof}
+
+\section{Binomischer Lehrsatz}
+\begin{definition}
+  Für $n, k \in \mathbb{N}_0$ setzt man \[ \binom{n}{k} := \frac{n \cdot (n-1) \cdot \cdots \cdot (n-k+1)}{k!} = \frac{n!}{k! (n-k)!} \]. Man sagt „$n$ über $k$“.
+\end{definition}
+\begin{remark}
+  Für $k \in \mathbb{N}_0$ ist $\binom{k}{0} = 1$. Für $k > n$ ist $\binom{n}{k} = 0$
+\end{remark}
+
+\begin{lemma}
+  $\forall k, n \in \mathbb{N}_0: \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$
+\end{lemma}
+\begin{proof}
+  \begin{align*}
+    \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{k! (n-1-k)!} + \frac{(n-1)!}{\underbrace{(n-1-k+1)!}_{= (n-k)!} (k-1)!} \\
+    \,&= \frac{(n-1)! (n-k)}{k! (n-k)!} + \frac{(n-1)! k}{(n-k)! k!} \\
+    \,&= \frac{(n-1)! (n \cancel{-k+k})}{k! (n-k)!} \\
+    \,&= \frac{n!}{k! (n-k)!}
+  \end{align*}
+\end{proof}
+\begin{theorem}
+  Der Anzahl von $k$-elementigen Teilmengen einer $n$-elementigen Menge ist $\binom{n}{k}$.
+\end{theorem}
+\begin{proof}[Beweis durch Infuktion nach $n$]
+  IA: Für $n = 1$ gibt es eine einelementige Teilmenge und eine leere Teilmenge. $\binom{1}{1} = 1, \binom{1}{0} = 1$
+
+  IS: Sei die Behauptung für eine $n$-elementige Menge $M_n$ richtig. Man betrachtet die $(n+1)$-elementige Menge $M_{n+1} = M_n \sqcup \left\{ a_{n+1} \right\}$.
+  
+  Für $k = 0$ und $k = n+1$ gibt es genau eine $k$-elementige Teilmenge. $\binom{n+1}{0} = 1, \binom{n+1}{k} = 1$. Die Behauptung ist in diesem Fall richtig.
+
+  Jede $k$-elementige Teilmenge von $M_{n+1}$ gehört zu genau einer der folgenden Klassen:
+  \begin{itemize}
+  \item $T_0$ besteht aus $k$-elementigen Teilmengen, die $a_{n+1}$ nicht enthalten. In $T_0$ gibt es nach IV $\binom{n}{k}$ Elementen.
+  \item $T_1$ besteht aus diejenigen Teilmengen, die $a_{n+1}$ enthalten. In $T_1$ gibt es $\binom{n}{k-1}$ Elementen. ($a_{n+1}$ ist in jeder Menge in $T_1$ enthalten und man „wählt $(k-1)$ Elementen aus $M_n$“)
+  \end{itemize}
+  Insgesamt gibt es $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$ Elementen.
+\end{proof}
+
+\begin{theorem}[Binomischer Lehrsatz]
+  Sei $x, y \in \mathbb{R}$ und $n \in \mathbb{N}_0$. Dann gilt: \[ (x+y)^n =  \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k \]
+\end{theorem}
+\begin{proof}[Beweis durch Induktion nach $n$]
+  IA: Für $n = 0$: $(x+y)^0 = 1 = \sum_{k=0}^0 \binom{0}{k} x^k y^{0-k}$
+
+  IS für $n \to n+1$:
+  \begin{align*}
+    (x+y)^{n+1} &= (x+y)^n \cdot (x+y) \\
+    \,&= (x+y)^n \cdot x + (x+y)^n \cdot y \\
+    \,&\stackrel{\text{\tiny IV}}{=} \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k x + \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k y \\
+    \,&= 1 \cdot x^{n+1} + \sum_{k=1}^n \binom{n}{k} x^{n+1-k}y^k + \sum_{k=1}^n \binom{n}{k-1} x^{n+1-k}y^k \\
+    \,&= \underbrace{1}_{= \binom{n+1}{0}} \cdot x^{n+1} + \sum_{k=1}^n \underbrace{\left( \binom{n}{k} + \binom{n}{k-1} \right)}_{= \binom{n+1}{k}} x^{n+1-k} y^k + \underbrace{1}_{= \binom{n+1}{n+1}} \cdot y^{n+1}
+  \end{align*}
+\end{proof}
+\begin{remark}
+  Sei $x > 0$, dann ist \( (1+x)^n = 1 + \underbrace{\binom{n}{1}}_n x + \underbrace{\sum \cdots}_{> 0} > 1 +nx \)
+\end{remark}
+
+\section{Bernoullische Ungleichung}
+\begin{theorem}
+  Es seien $n \in \mathbb{N}$ und $a \in \mathbb{R}, a > -1$. Dann gilt $(1+a)^n \ge 1 + na$.
+\end{theorem}
+\begin{proof}[Beweis durch Induktion]
+  IA. Für $n=1$ ist $1 + a = 1 + a$
+
+  IS.
+  \begin{align*}
+    (1+a)^{n+1} &= (1+a)^n (1+a) \\
+                &\stackrel{\text{\scriptsize IV}}{\ge} (1+na) (1+a) \\
+    \,&= 1 + na + a + \smash{\underbrace{na^2}_{\ge 0}} \\
+    \,&\ge 1 + (n+1)a
+  \end{align*}
+\end{proof}
