@@ -1,0 +1,93 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Folgen}
+
+\section{Beschränkung}
+\begin{definition}
+  Eine Folge $a_n$ heißt nach oben (bzw. unten) beschränkt, falls $\exists k \in \mathbb{R}\: \forall n \in \mathbb{N}: a_n \le k$ bzw. $\exists k \in \mathbb{R}\: \forall n \in \mathbb{N}: a_n \ge k$. Eine Folge heißt beschränkt, falls $\exists k > 0\: \forall n \in \mathbb{N}: -k \le a_n \le k$.
+\end{definition}
+
+\begin{theorem}
+  Jede konvergente Folge $a_n$ ist beschränkt.
+\end{theorem}
+
+\begin{theorem}
+  Der Grenzwert einer konvergenten Folge ist eindeutig.
+\end{theorem}
+
+\begin{theorem}
+  Seien $x_n, y_n$ konvergente reelle Folgen mit $x_n \to a, y_n \to b$ für $n \to \infty$, dann ist
+  \begin{itemize}
+  \item $x_n + y_n \to a+b$
+  \item $x_n y_n \to ab$
+  \item $\lambda x_n \to \lambda a$
+  \item $b \ne 0 \implies \frac{x_n}{y_n} \to \frac{a}{b}$ ($\frac{x_n}{y_n}$ ist für fast alle $n$ definiert)
+  \item $x_n \le y_n \text{ für fast alle $n$} \implies a \le b$
+  \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+  Seien $a_n, b_n, c_n$ Folgen mit $a_n \to 0, (b_n - a_n) \to 0, a_n \le c_n \le b_n$, dann konvergiert $c_n$ gegen 0.
+\end{theorem}
+
+\section{Monotone Konvergenz}
+
+\begin{definition}
+  Eine reelle Folge $a_n$ heißt (monoton) wachsend bzw. streng monoton wachsend, wenn $\forall n \in \mathbb{N}: a_n \le a_{n+1} \text{ bzw. } a_n < a_{n+1}$. Sie heißt (monoton) fallend bzw. streng monoton fallend, wenn $\forall n \in \mathbb{N}: a_n \ge a_{n+1} \text{ bzw. } a_n > a_{n+1}$. Man nennt $a_n$ (streng) monoton, wenn $a_n$ (strend) wachsend oder (streng) fallend ist.
+\end{definition}
+
+\begin{theorem}
+  Eine monoton wachsende (bzw. fallende) Folge $a_n$ konvergiert genau dann, wenn $a_n$ nach oben (bzw. unten) beschränkt ist.
+\end{theorem}
+
+\begin{definition}[Divergente Folgen]
+  Eine reelle Folge $x_n$ strebt gegen $+\infty$, falls $\forall k \ge 0\: \exists N \in \mathbb{N}\: \forall n \ge N: x_n \ge k$.
+
+  Eine reelle Folge $x_n$ strebt gegen $-\infty$, falls $-x_n$ gegen $+\infty$ strebt.
+\end{definition}
+
+\begin{example}
+  $x_n$ ist divergent (gegen $\infty$)
+\end{example}
+
+\begin{theorem}
+  $x_n \xrightarrow{n \to \infty} \infty \implies \frac{1}{x_n} \xrightarrow{n \to \infty} 0$
+
+  Ist eine Nullfolge $x_n > 0$ für fast alle $n$, dann ist $\frac{1}{x_n} \xrightarrow{n \to \infty} \infty$
+\end{theorem}
+
+\begin{example}[$\frac{n}{2^n} \to 0$]
+  \begin{align*}
+    2^n &= (1+1)^n \\
+    \,&= \sum_{j=0}^n \binom{n}{j} \\
+    \,&\stackrel{n\ge2}{\ge} \binom{n}{2} \\
+    \,&= \frac{n(n-1)}{2}
+  \end{align*}
+\end{example}
+
+\section{Häufungswerte und Teilfolgen}
+\begin{definition}[Umordnung]
+  Sei $a_n$ eine reelle Folge. Die Umordnung ist gegeben durch eine Bijektion $\sigma: \mathbb{N} \to \mathbb{N}$. $b_n := a_{\sigma(n)}$ heißt Umordnung von $a_n$.
+\end{definition}
+\begin{definition}[Teilfolge]
+  Sei $a_n$ eine reelle Folge und $\kappa: \mathbb{N} \to \mathbb{N}$ streng monoton wachsend. $b_n := a_{\kappa(n)}$ heißt eine Teilfolge von $a_n$.
+\end{definition}
+
+\begin{theorem}
+  Für jede konvergente reelle Folge $a_n$ konvergiert jede Umordnung und jede Teilfolge gegen denselben Grenzwert.
+\end{theorem}
+
+\begin{definition}
+  Sei $a_n$ reelle Folge. Eine relle Zahl $a$ heißt Häufungswert (oder Häufungspunkt) von $a_n$, falls $\forall \varepsilon > 0\: \forall L \in \mathbb{N}\: \exists n > L: a-\varepsilon \le a_n \le a+\varepsilon$
+\end{definition}
+
+\begin{example}
+  Die Folge $a_n = (-1)^n$ hat die Häufungswerte 1 und -1.
+
+  Die Folge $a_n = (-1)^n + \frac{1}{n}$ hat (auch) die Häufungswerte 1 und -1.
+
+  Die Folge $a_n = n$ hat keinen Häufungswert.
+\end{example}
+
+\begin{theorem}
+  Sei $a \in \mathbb{R}$ eine Häufungswert der Folge $a_n$. Genau dann existert eine Teilfolge von $a_n$, die gegen $a$ konvergiert.
+\end{theorem}

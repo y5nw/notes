@@ -1,0 +1,30 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Induktives Vorgehen}
+
+\section{Vollständige Induktion}
+\begin{definition}[Peano-Axiome]
+  Folgende Aussagen charakterisieren die natürlichen Zahlen:
+  \begin{itemize}
+  \item $n \in \mathbb{N}_0$
+  \item $\forall n \in \mathbb{N}_0: n+1 \in \mathbb{N}_0$
+  \item $\forall n \in \mathbb{N}_0: n + 1 \ne 0$
+  \item $\forall n, m \in \mathbb{N}_0: n+1 = m+1 \implies n = m$
+  \item $\forall M \subseteq \mathbb{N}_0: (0 \in M \wedge \forall n \in M: n+1 \in M) \implies M = \mathbb{N}$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Struktur der vollständigen Induktion]
+  Um $\forall n \in \mathbb{N}_0: A_n$ ($A_n$ heißt Induktionshypothese) zu zeigen, zeigt man
+  \begin{description}
+  \item[Induktionsanfang] $A_0$
+  \item[Induktionsschritt] $A_n \implies A_{n+1}$
+  \end{description}
+
+  Im Induktionsschritt heißt $A_n$ Induktionsvorraussetzung und $A_{n+1}$ Induktionsbehauptung.
+
+  \begin{prooftree}
+    \AxiomC{$A_0$}
+    \AxiomC{$\forall n \in \mathbb{N}_0: A_n \implies A_{n+1}$}
+    \BinaryInfC{$\forall n \in \mathbb{N}_0: A_n$}
+  \end{prooftree}
+\end{definition}

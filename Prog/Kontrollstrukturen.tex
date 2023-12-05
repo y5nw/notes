@@ -1,0 +1,38 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Kontrollstrukturen}
+
+\section{Ausdrücke und Anweisungen}
+\begin{itemize}
+\item Ein Ausdrück beschreibt eine vorzunehmende Auswertung.
+\item Eine Anweisung ist eine Einheit der Ausführung.
+\item Bestimmte Ausdrücke können als Anweisungen verwendet werden.
+\end{itemize}
+
+\section{Eingaben über die Konsole}
+\lstinputlisting[language=Java]{Prog/ScannerExample.java}
+
+\section{\texttt{if}-Anweisung}
+\lstinputlisting[language=Java]{Prog/IfExample.java}
+
+\section{\texttt{switch}-Anweisung}
+\lstinputlisting[language=Java]{Prog/SwitchExample.java}
+
+\section{\texttt{while}-Schleife}
+\lstinputlisting[language=Java]{Prog/WhileExample.java}
+
+\section{\texttt{do-while}-Schleife}
+\begin{lstlisting}[language=Java]
+while (Bedingung) {Anweisungen}
+do {Anweisungen} while (Bedingung);
+\end{lstlisting}
+
+In der \texttt{do-while}-Schleife wird die Bedingung erst nach der Ausführung der Anweisungen geprüft!
+
+\section{\texttt{for}-Schleife}
+\lstinputlisting[language=Java]{Prog/ForExample.java}
+
+\section{\texttt{break}-Anweisung}
+\texttt{break} veranlasst das sofortige Verlassen der innersten Schleife.
+
+\section{\texttt{continue}-Anweisung}
+\texttt{continue} bricht die aktuelle Iteration ab und springt zur nächsten Iteration.
