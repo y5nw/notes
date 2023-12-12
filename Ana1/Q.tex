@@ -1,0 +1,26 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Dichtheit von $\mathbb{Q}$ in $\mathbb{R}$}
+
+\[ \mathbb{Q} := \left\{ \frac{m}{n} \middle| m \in \mathbb{Z}, n \in \mathbb{N} \right\} \] ist die Menge retionaler Zahlen.
+\begin{remark}
+  $\mathbb{Q} \subsetneq \mathbb{R}$
+\end{remark}
+
+\begin{definition}
+  Es sei $A \subseteq B \subseteq \mathbb{R}$. $A$ heißt dicht in $B$, wenn $\forall b \in B\: \exists (a_n)_n \subseteq A: \lim_{n \to \infty} a_n = b$
+\end{definition}
+
+\begin{lemma}
+  \begin{align*}
+    \forall x, y \in \mathbb{R}, y-x>1\: \exists m \in \mathbb{Z}: &x<m<y \\
+    \forall x, y \in \mathbb{R}, y > x\: \exists q \in \mathbb{Q}: &x<q<y
+  \end{align*}
+\end{lemma}
+
+\begin{remark}
+  $\forall x \in \mathbb{R}\: \exists (q_n)_n \in \mathbb{Q}: q_n \to x$
+\end{remark}
+
+\begin{lemma}
+  $\forall x \in \mathbb{R}\: \forall n \in \mathbb{N}\: \exists m_n \in \mathbb{Z}: \frac{m_n-1}{n} \le x < \frac{m_n}{n}$
+\end{lemma}

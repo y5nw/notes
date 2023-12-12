@@ -1,0 +1,79 @@
+% -*- TeX-master: "../main" -*-
+\chapter{Reihen}
+
+\begin{definition}
+  Sei $(a_n)_n$ eine Folge.
+  \begin{align*}
+    s_n &:= \sum_{k=1}^n a_k \\
+    \sum_{n=1}^{\infty} a_n &:= \lim_{n \to \infty} s_n
+  \end{align*}
+
+  $s_n$ heißt Reihe.
+\end{definition}
+
+\begin{theorem}
+  Sei $(a_n)_n$ eine reelle Folge mit $a_n \ge 0$. $s_n$ konvergiert $\iff$ $s_n$ ist beschränkt.
+\end{theorem}
+
+\begin{corollary}
+  Sei $(a_n)_n$ eine Folge mit $a_n \ge 0$. Dann gilt entweder $\sum_{n=0}^{\infty} a_n = \infty$ oder $\sum_{n=0}^{\infty} a_n < \infty$
+\end{corollary}
+
+\begin{lemma}[Geometrische Summe und Reihe]
+  \begin{align*}
+    q \ne 1 \implies \sum_{k=0}^n q^k &= \frac{1-q^{k+1}}{1-q} \\\
+    |q| < 1 \implies \sum_{k=0}^{\infty} q^n &= \frac{1}{1-q}
+  \end{align*}
+\end{lemma}
+
+\begin{theorem}
+  Seien $\sum_{n=1}^{\infty} a_n, \sum_{n=1}^{\infty} b_n$ konvergente Reihen, dann ist $\sum_{n=1}^n (\lambda a_n + \mu b_n) = \lambda \sum_{n=1}^{\infty} a_n + \mu \sum_{n=1}^{\infty} b_n$ für $\lambda, \mu \in \mathbb{R}$.
+\end{theorem}
+
+\begin{theorem}[Majorantemkriterium]
+  Es sei $0 \le a_n \le b_n$. Konvergiert $\sum_{n=0}^{\infty} b_n$, so gilt: $0 \le \sum_{n=0}^{\infty} a_n \le \sum_{n=0}^{\infty} b_n$.
+\end{theorem}
+
+\begin{theorem}[Minorantemkriterium]
+  Es sei $0 \le b_n \le a_n$. Divergiert $\sum_{n=0}^n b_n$, so divergiert auch $\sum_{n=0}^n a_n$.
+\end{theorem}
+
+\begin{theorem}
+  Sei $(a_n)$ eine monoton fallende Nullfolge. Ist $\sum_{n=0}^{\infty}$ konvergent, so ist $\sum_{n=0}^n 2^n a_{2^n}$ auch konvergent.
+\end{theorem}
+
+\begin{theorem}
+  Sei $a_n$ eine Folge reeller Zahlen. $\sum_{n=0}^{\infty} a_n$ konvergiert $\iff$ $\forall \varepsilon > 0\: \exists N_{\varepsilon} \in \mathbb{N}\: \forall m \ge n \ge N_{\varepsilon}: \left| \sum_{j=n+1}^m \right| < \varepsilon$
+\end{theorem}
+
+\begin{corollary}
+  Ist $\sum_{n=0}^{\infty} a_n$ konvergent, so ist $a_n$ eine Nullfolge.
+\end{corollary}
+
+\section{Absolut konvergente Reihen}
+
+\begin{definition}
+  $\sum_{n=0}^{\infty} a_n$ heißt absolut konvergent, wenn $\sum_{n=0}^{\infty} |a_n|$ konvergiert.
+\end{definition}
+
+\begin{theorem}
+  Ist $\sum_{n=0}^{\infty} a_n$ absolut konvergent, so ist sie auch konvergent und $\left| \sum_{n=1}^{\infty} a_n \right| \le \sum_{n=1}^{\infty} |a_n|$.
+\end{theorem}
+
+\begin{definition}[Majorante]
+  Die Reihe $\sum_{n=0}^{\infty} c_n$ mit $\forall n \in \mathbb{N}: c_n > 0$ heißt Majorante der Reihe $\sum_{n=1}^{\infty} a_n$, falls $|a_n| \le c_n$ für fast alle $n \in \mathbb{N}$.
+\end{definition}
+
+\begin{theorem}[Majorantenkriterium]
+  Hat $\sum_{n=1}^{\infty} a_n$ eine konvergente Majorante $\sum_{n=1}^{\infty} c_n$, so ist $\sum_{n=1}^{\infty} a_n$ absolut konvergent.
+\end{theorem}
+
+\begin{theorem}[Quotientenkriterium]
+  Sei $\sum_{n=1}^{\infty}$ Reihe mit $a_n \ne 0$. Ferner gebe es $0 \le q \le 1$ mit $\frac{|a_{n+1}|}{|a_n|} \le q$ für fast alle $n$, dann konvergiert $\sum_{n=1}^{\infty} a_n$ absolut.
+\end{theorem}
+
+\begin{remark}
+  $\iff \limsup_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} < 1$.
+
+  Ist $\liminf_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} > 1 \implies$ Divergenz.
+\end{remark}

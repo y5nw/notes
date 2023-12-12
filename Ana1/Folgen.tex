@@ -91,3 +91,68 @@
 \begin{theorem}
   Sei $a \in \mathbb{R}$ eine Häufungswert der Folge $a_n$. Genau dann existert eine Teilfolge von $a_n$, die gegen $a$ konvergiert.
 \end{theorem}
+
+\section{Größte und kleinste Häufungspunkte, limes superior und limes inferior}
+\begin{definition}
+  Es sei $(a_n)_n$ eine beschränkte Folge.
+  $\limsup_{n \to \infty} a_n := \lim_{n \to \infty} \sup_{l \ge n} a_l$ heißt limes superior.
+  $\liminf_{n \to \infty} a_n := \lim_{n \to \infty} \inf_{l \ge n} a_l$ heißt limes inferior.
+\end{definition}
+\begin{remark}
+  Klar: $\liminf_{n \to \infty} a_n \le \limsup_{n \to \infty} a_n$
+\end{remark}
+
+\begin{lemma}[Charakterisierung von limes superior und limes inferior]
+  Es sei $(a_n)_n$ eine beschränkte Folge. Dann ist
+  \begin{align*}
+    a^{*} = \limsup_{n \to \infty} a_n \iff \forall \varepsilon > 0:& a_n < a^{*} + \varepsilon \wedge a_n > a^{*} - \varepsilon \\
+    \,&\text{für fast alle $n$}\\
+    a_{*} = \liminf_{n \to \infty} a_n \iff \forall \varepsilon > 0:& a_n < a_{*} + \varepsilon \wedge a_n > a_{*} - \varepsilon \\
+    \,&\text{für fast alle $n$}
+  \end{align*}
+\end{lemma}
+
+\begin{lemma}
+  Es sei $(a_n)_n$ eine beschränkte volle Folge und $H((a_n)_n)$ die Menge der Häufungswerte dieser Folge. Dannn ist \[ \limsup a_n, \liminf a_n \in H((a_n)_n) \]
+
+  Daraus folgt insbesondere, dass \[ H((a_n)_n) \ne \emptyset \]
+
+  Ferner gilt: \[ \forall x \in H((a_n)_n): \liminf a_n \le x \le \limsup a_n \]
+\end{lemma}
+
+\begin{notation}
+  Ist $(a_n)_n$ nicht nach oben beschränkt, schreibt man $\lim \sup a_n = \infty$
+
+  Ist $(a_n)_n$ nicht nach unten beschränkt, schreibt man $\lim \inf a_n = -\infty$
+\end{notation}
+
+\begin{corollary}
+  Eine volle Folge $(a_n)_n$ konvergiert $\iff$ $(a_n)_n$ ist beschränkt und $\limsup a_n = \liminf a_n$
+\end{corollary}
+
+\begin{theorem}[Satz von Bolzano-Weierstraß]
+  Jede beschränkte volle Folge $(a_n)_n$ besitzt mindestens einen Häufungspunkt.
+\end{theorem}
+
+\begin{corollary}
+  Jede beschränkte reelle Folge $(a_n)$ hat eine konvergente Teilfolge.
+\end{corollary}
+
+\section{Konvergenzkriterium von Cauchy}
+\begin{definition}[Cauchy-Folge]
+  Eine volle Folge $(a_n)_n$ heißt Cauchy-Folge, wenn $\forall \varepsilon > 0\: \exists N \in \mathbb{N}\: \forall n,m \ge N: |a_n-a_m| < \varepsilon$
+\end{definition}
+\begin{lemma}
+  Jede konvergente volle Folge $(a_n)_n$ ist eine Cauchy-Folge.
+\end{lemma}
+\begin{lemma}
+  Jede konvergente Cauchy-Folge ist beschränkt.
+\end{lemma}
+
+\begin{lemma}
+  Eine volle Cauchy-Folge $(a_n)_n$ konvergiert $\iff$ sie hat eine konvergente Teilfolge
+\end{lemma}
+
+\begin{theorem}
+  Jede volle Folge konvergiert genau dann, wenn sie eine Cauchy-Folge ist.
+\end{theorem}
