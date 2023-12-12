@@ -77,3 +77,23 @@
 
   Ist $\liminf_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} > 1 \implies$ Divergenz.
 \end{remark}
+
+\begin{theorem}
+  $e = \sum_{n=0}^{\infty} \frac{1}{n!} = \lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^n$ ist irrational.
+\end{theorem}
+
+\begin{theorem}[Wurzelkriterium]
+  Sei $a_n$ reelle Folge mit $\limsup_{n \to \infty} \sqrt[n]{|a_n|} < 1$, dann konvergiert $\sum_{n=0}^{\infty} a_n$ absolut. Ist $\limsup_{n \to \infty} \sqrt[n]{|a_n|} > 1$, so divergiert $\sum_{n=0}^{\infty} a_n$. Sonst ist keine Aussage möglich.
+\end{theorem}
+
+\begin{definition}
+  Seien $\sum_{n=0}^{\infty} a_n, \sum_{n=0}^{\infty} b_n$ Reihen. Man nennt $\sum_{n=0}^{\infty} b_n$ Umordnung von $\sum_{n=0}^{\infty} a_n$, falls eine Bijektion $\Gamma: \mathbb{N}_0 \to \mathbb{N}_0$ existiert mit $\forall n \in \mathbb{N}_0: b_n = a_{\Gamma(n)}$
+\end{definition}
+
+\begin{definition}
+  Eine Reihe $\sum_{n=0}^{\infty} a_n$ heißt unbedingt konvergent, falls jede Umordnung $\sum_{n=0}^{\infty} b_n$ von $\sum_{n=0}^{\infty} a_n$ ebenfalls konvergiert und dieselbe Summe von $\sum_{n=0}^{\infty} a_n$ hat. Andernfalls heißt $\sum_{n=0}^{\infty} a_n$ bedingt konvergent.
+\end{definition}
+
+\begin{theorem}
+  $\sum_{n=0}^{\infty}$ ist absolut konvergent $\iff$ sie ist unbedingt konvergent.
+\end{theorem}
